@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice Form</title>
+</head>
+<body>
+	<form action="success.html" method="post">
+	
+	<div>
+		<label>Name:</label>
+		<input type="text" name="full_name">
+	</div>
+	
+	<div>
+		<label>Email:</label>
+		<input type="email" name="email">
+	</div>
+	
+	<div>
+		<label>Destination Type:</label>
+		<select name="destination">
+			<option value="beach">Beach</option>
+			<option value="mountain">Mountain</option>
+			<option value="cruise">Cruise</option>
+		</select>
+	</div>
+
+	<div>
+		<textarea name="fave_city" cols="50" rows="15">What is your favorite destination and Why?</textarea>
+	</div>
+
+	<div>
+		<label>Estimated Departure:</label>
+		<input type="date" name="date">
+	</div>
+
+	<button type="submit">Let's Go</button>
+
+	</form>
+</body>
+</html>
