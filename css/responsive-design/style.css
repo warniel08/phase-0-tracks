@@ -1,3 +1,20 @@
+body {
+  max-width: 960px;
+}
+
+section#external-links {
+  width: 15%;
+  display: inline-block;
+  vertical-align: top;
+  min-width: 100px;
+}
+
+main {
+  width: 80%;
+  display: inline-block;
+  vertical-align: top;
+}
+
 blockquote {
   border-left: 5px solid blue;
   padding: 15px;
