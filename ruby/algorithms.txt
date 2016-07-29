@@ -1,11 +1,5 @@
 Robot on elevator algorithm pseudocode 
 
-Three buttons for three floors
-Keep it easy
-Floor 1 on bottom
-Floor 2 in middle
-Floor 3 on top
-
 If entering elevator on first floor 
     Enter the elevator at least one foot inside
     Turn 180 degrees in place
@@ -45,5 +39,16 @@ Else
 End
 
 
-Real-Life Algorithm
+Real-Life Algorithm (Turn on light in family room)
+Starting at back door doorknob, facing the door, and 38 inches to the left of 
+back wall (Wall A), and 36 inches up from the floor
+    Move up 11 inches from starting location and move 15 inches to the left of the
+    starting location, the tip of the light switch is 3/8 of an inch perpendicular to the 
+    wall (Wall B)
+        This is the location of the light switch for the carport, we won't mess with
+        this switch, this location should have the light switch in the off position
+    Move left two inches and that switch is the light switch to the family room
+        Move down 1/8 of an inch and in 3/8 of an inch toward Wall B
+        Firmly push the light switch up 1 inch
+            The light should now turn on (if bulbs are not burned out and power is not out)
 
