@@ -1,0 +1,49 @@
+Robot on elevator algorithm pseudocode 
+
+Three buttons for three floors
+Keep it easy
+Floor 1 on bottom
+Floor 2 in middle
+Floor 3 on top
+
+If entering elevator on first floor 
+    Enter the elevator at least one foot inside
+    Turn 180 degrees in place
+    Extend right hand to the right all the way until it touches wall (Wall A)
+    Hand should be 3 feet above floor (Floor)
+    Elevator doors will close automatically
+    Move hand forward along Wall A to where it intersects with wall (Wall B)
+    Move hand left on Wall B 1 foot
+The center of Floor 1 button position on Wall B is 3 ft above Floor and 1 ft to left of intersection of Walls A and B
+Each button is a circle and has a diameter of 2 inches
+There is one inch of wall space dividing each of the three floor buttons from each other
+The center of Floor 2 button is 3 inches above center of Floor 1 button
+The center of Floor 3 button is 3 inches above center of Floor 2 button
+    If wanting to traverse to Floor 2
+        While hand is at Floor 1 button location, move hand up 3 inches and extend pointer finger to depress Floor 2 button .25 inches
+        Release pressure on button
+            Once a button is pressed it will chime for .5 seconds to indicate it has been selected and it will light up and stay lit to confirm the selection
+    Elsif wanting to traverse to Floor 3
+        Repeat instructions for Floor 2 but move hand up 6 inches from Floor 1 button position
+    End
+Elsif entering elevator on second floor
+    Follow same instructions for entering on first floor
+    If wanting to traverse to Floor 1
+        Depress Floor 1 button
+    Elsif wanting to traverse to Floor 3
+        Follow same instructions for traversing to Floor 3
+    End
+Elsif entering elevator on thrid floor
+    Follow same instructions for entering on first floor
+    If wanting to traverse to Floor 1
+        Depress Floor 1 button
+    Elsif wanting to traverse to Floor 2
+        Follow same instructions for traversing to Floor 2
+    End
+Else
+    Exit building
+End
+
+
+Real-Life Algorithm
+
