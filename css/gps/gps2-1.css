@@ -1,0 +1,39 @@
+
+body {
+  width: 960px;
+}
+
+header{
+  background-color: red;
+  border-bottom: dashed 5px;
+}
+
+h1 {
+   font-family: Helvetica;
+}
+
+footer{
+  background-color: tan;
+  border-top: dashed 5px;
+  padding-top: 13px;
+}
+.column-1 {
+  background-color: yellow;
+  display: inline-block;
+  vertical-align: top;
+  width: 400px;
+  padding: 10px;
+  : 50px;
+}
+.column-2 {
+  background-color: green;
+  display: inline-block;
+  vertical-align: top;
+  width: 400px;
+  padding: 10px;
+}
+
+h2 {
+  color: red;
+}
+
