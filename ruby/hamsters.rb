@@ -1,17 +1,22 @@
-puts "What is the hamster's name?"
+print "What is the hamster's name? "
 name = gets.chomp
 
-puts "How loud is your hamster? (Enter number between 1-10)"
+print "How loud is your hamster? (Enter number between 1-10) "
 volume = gets.chomp.to_i
 
-puts "What color is your hamster?"
+print "What color is your hamster? "
 color = gets.chomp
 
-puts "Is this hamster a good candidate for adoption? (y/n)"
+print "Is this hamster a good candidate for adoption? (y/n) "
 adoption = gets.chomp
 
-puts "Approximately how old is your hamster?"
+print "Approximately how old is your hamster? "
 age = nil
 age = gets.chomp.to_f
 
-p name, volume, color, adoption, age
+puts "\nPlease review your data:"
+puts "Name: #{name} 
+Volume of hamster: #{volume} 
+Color of hamster: #{color} 
+Adoption eligibility: #{adoption} 
+Age of hamster: #{age}"
