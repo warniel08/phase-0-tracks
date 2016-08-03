@@ -24,6 +24,19 @@ while n < employees.to_i
 	
 	print "Would you like to enroll in the company's health insurance? (y/n) "
 	health_insurance = gets.chomp
+
+	print "What allergies do you have? "
+	allergies = gets.chomp
+
+	while allergies
+		print "What other allergies do you have? (type 'done' when finished) "
+		allergies = gets.chomp
+		if allergies == "done"
+			break
+		elsif allergies == "sunshine"
+			break
+		end
+	end
 	
 	#Create boolean statements for each variable
 	if age.to_i == (2016 - birth_year.to_i)
@@ -53,6 +66,8 @@ while n < employees.to_i
 	#Create conditional statements for the logic statements
 	if name_input == true #correct_age == true && wants_garlic == true && wants_health == true
 			puts "\nDefinitely a vampire."
+		elsif allergies == "sunshine"
+			puts "\nProbably a vampire."
 		elsif correct_age == true && (wants_garlic == true || wants_health == true)
 			puts "\nProbably not a vampire."
 		elsif correct_age != true && wants_garlic != true && wants_health != true
