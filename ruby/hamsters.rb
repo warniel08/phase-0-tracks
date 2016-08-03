@@ -15,7 +15,7 @@ age = nil
 age = gets.chomp.to_f
 
 puts "\nPlease review your data:"
-puts "Name: #{name} 
+puts "Name of hamster: #{name} 
 Volume of hamster: #{volume} 
 Color of hamster: #{color} 
 Adoption eligibility: #{adoption} 
