@@ -13,7 +13,6 @@ garlic_bread = gets.chomp
 print "Would you like to enroll in the company's health insurance? (y/n) "
 health_insurance = gets.chomp
 
-
 if age.to_i == (2016 - birth_year.to_i)
 	correct_age = true
 else
