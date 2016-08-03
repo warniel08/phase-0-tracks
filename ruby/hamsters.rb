@@ -10,7 +10,7 @@ color = gets.chomp
 print "Is this hamster a good candidate for adoption? (y/n) "
 adoption = gets.chomp
 
-print "Approximately how old is your hamster? "
+print "Approximately how old is your hamster in years? "
 age = nil
 age = gets.chomp.to_f
 
@@ -19,4 +19,4 @@ puts "Name of hamster: #{name}
 Volume of hamster: #{volume} 
 Color of hamster: #{color} 
 Adoption eligibility: #{adoption} 
-Age of hamster: #{age}"
+Age of hamster: #{age} years old"
