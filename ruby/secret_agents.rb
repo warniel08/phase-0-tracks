@@ -23,10 +23,12 @@ def encrypt(x)
 	index = 0
 	string = x
 	while index < string.length
-		if string[index] != " "
-			string[index] = string[index].next
-  			index += 1
-  		end
+		if string[index] == " "
+			index += 1
+		else
+		string[index] = string[index].next
+  		index += 1
+  	end
 	end
 	puts string
 end
