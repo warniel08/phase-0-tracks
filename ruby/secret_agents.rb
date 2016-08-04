@@ -32,10 +32,10 @@ def encrypt(x)
   			index += 1
   		end
 	end
-	puts string
+	string
 end
 
-encrypt("")
+
 
 
 def decrypt(x)
@@ -53,13 +53,12 @@ def decrypt(x)
   			index += 1
   		end
 	end
-	puts string
+	string
 end
 
-decrypt("hello")
+puts decrypt(encrypt("swordfish"))
 
 
-#alpha's index position subtracting 1
 
 
 
