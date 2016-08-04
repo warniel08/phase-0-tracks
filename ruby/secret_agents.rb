@@ -1,4 +1,5 @@
 #encrypt method
+#set index variable
 #define encrypt method
 #ask user for a string
 #store the string in a variable
@@ -15,3 +16,20 @@
 #keep space character a space character, assume lowercase
 #print the new string to the screen
 #end the method
+
+
+
+def encrypt(x)
+	index = 0
+	string = x
+	while index < string.length
+		if string[index] != " "
+			string[index] = string[index].next
+  			index += 1
+  		end
+	end
+	puts string
+end
+
+encrypt("one two")
+
