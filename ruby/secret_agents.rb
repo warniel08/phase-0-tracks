@@ -62,6 +62,8 @@ end
 #puts decrypt(encrypt("swordfish"))
 
 # ask if the user wants to decrypt or encrypt a password
+# create loop to make sure user types encrypt or decrypt, anything else will continue
+# asking for encrypt or decrypt
 # ask user for password
 # run password through desired method
 # print results to screen 
