@@ -46,14 +46,17 @@ def decrypt(x)
 		if string[index] == " "
 			index += 1
 		else
-			string[index] = alpha[index-1]
+			letter = string[index]
+			letter = alpha.index(letter)-1
+			letter = alpha[letter]
+			string[index] = letter
   			index += 1
   		end
 	end
 	puts string
 end
 
-decrypt("bcd")
+decrypt("hello")
 
 
 #alpha's index position subtracting 1
