@@ -1,19 +1,22 @@
 #encrypt method
 #define encrypt method
 #set index variable
+#set string variable
 #create while loop that has index position less than string length
+#set z character to a
+#skip the space in the string, assume lowercase
 #advance each letter of the string one letter forward
-#keep space character a space character, assume lowercase
-#print the new string to the screen
 #end the method
 
 #decrypt method
 #define decrypt method
-#ask user for a string
-#store the string in a variable
-#reverse each letter of the string one letter backward
-#keep space character a space character, assume lowercase
-#print the new string to the screen
+#set index variable
+#set string variable
+#set alpha variable
+#create while loop that has index position less than string length
+#skip the space in the string, assume lowercase
+#subtact string one character backwards from alpha string save that in current string
+#use letter variable to replace character
 #end the method
 
 
@@ -56,7 +59,30 @@ def decrypt(x)
 	string
 end
 
-puts decrypt(encrypt("swordfish"))
+#puts decrypt(encrypt("swordfish"))
+
+# ask if the user wants to decrypt or encrypt a password
+# ask user for password
+# run password through desired method
+# print results to screen 
+
+puts "Would you like to encrypt or decrypt a password?"
+question = gets.chomp
+
+until question == "encrypt" || question == "decrypt"
+	puts "Please enter encrypt or decrypt"
+	question = gets.chomp
+end
+
+puts "What is the password?"
+password = gets.chomp
+
+
+if question == "encrypt"
+		puts encrypt(password)
+else 
+		puts decrypt(password)
+end
 
 
 
