@@ -41,7 +41,13 @@ watch_hgtv = gets.chomp
 
 
 user = {
-	name: name
-	number
+	name: name,
+	number_of_children: number_of_children,
+	decor_theme: decor_theme,
+	shade_of_green: shade_of_green,
+	number_of_rooms: number_of_rooms,
+	number_of_years: number_of_years,
+	watch_hgtv: watch_hgtv,
 }
 
+print user
