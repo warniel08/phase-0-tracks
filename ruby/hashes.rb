@@ -18,7 +18,7 @@
 
 puts "\nWelcome to my Interior Design Program"
 
-print "\nPlease enter your name: "
+print "\nPlease enter your first and last name: "
 name = gets.chomp
 
 print "How many children do you have? "
@@ -50,4 +50,30 @@ user = {
 	watch_hgtv: watch_hgtv,
 }
 
-print user
+user.each do |k, v|
+	puts "\n#{k}: #{v}"
+end
+
+#puts "\nName: #{user[:name]}"
+#puts "Number of children: #{user[:number_of_children]}"
+#puts "Favorite decor theme: #{user[:decor_theme]}"
+#puts "Favorite shade of green: #{user[:shade_of_green]}"
+#puts "Number of rooms in home: #{user[:number_of_rooms]}"
+#puts "Number of years lived in home: #{user[:number_of_years]}"
+#puts "Watch HGTV: #{user[:watch_hgtv]}"
+
+#print "What changes would you like to make to the data?"
+#change = gets.chomp
+
+#if change == "none"
+#	puts "\nName: #{user[:name]}"
+#	puts "Number of children: #{user[:number_of_children]}"
+#	puts "Favorite decor theme: #{user[:decor_theme]}"
+#	puts "Favorite shade of green: #{user[:shade_of_green]}"
+#	puts "Number of rooms in home: #{user[:number_of_rooms]}"
+#	puts "Number of years lived in home: #{user[:number_of_years]}"
+#	puts "Watch HGTV: #{user[:watch_hgtv]}"
+#elsif 
+
+
+
