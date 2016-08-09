@@ -88,14 +88,29 @@ p furniture
 
 puts "\n"
 # Array
-letters = ["a", "b", "c", "d", "e", "f"]
+letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i"]
 
-puts "Before delete_if method is called:"
+puts "\nBefore .delete_if method is called:"
 p letters
 
-puts "\nAfter delete_if method is called:"
+puts "\nAfter .delete_if method is called:"
 letters.delete_if { |letter| letter < "c" }
 p letters
+
+puts "\nBefore .keep_if method is called:"
+p letters
+
+puts "\nAfter .keep_if method is called:"
+letters.keep_if { |letter| letter > "e" }
+p letters 
+
+puts "\nBefore .select! method is called:"
+p letters
+
+puts "\nAfter .select! method is called:"
+letters.select! { |letter| letter > "f" }
+p letters 
+
 
 puts "\n"
 # Hash
@@ -110,16 +125,26 @@ numbers = {
 	8 => "eight"
 }
 
-puts "Before delete_if method is called:"
+puts "Before .delete_if method is called:"
 p numbers
 
-puts "\nAfter delete_if method is called:"
+puts "\nAfter .delete_if method is called:"
 numbers.delete_if { |digit, word| digit < 3 }
 p numbers
 
+puts "\nBefore .keep_if method is called:"
+p numbers
 
+puts "\nAfter .keep_if method is called:"
+numbers.keep_if { |digit, word| digit > 4 }
+p numbers
 
+puts "\nBefore .select! method is called:"
+p numbers
 
+puts "\nAfter .select! method is called:"
+numbers.select! { |digit, word| digit > 6 }
+p numbers
 
 
 
