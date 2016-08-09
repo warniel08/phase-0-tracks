@@ -1,15 +1,3 @@
-#def method
-#	puts "This message is inside the method: "
-#	puts "Hello"
-#	yield
-#	yield
-#	yield
-#end
-#
-#method {
-#	puts "This is the message in the block: "
-#	puts "Goodbye"}
-
 
 puts "\nHash"
 house_paint = {
@@ -164,27 +152,5 @@ numbers.reject! { |digit, word| digit < 9 }
 p numbers
 # Shows reject! returns false
 p numbers == true
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
