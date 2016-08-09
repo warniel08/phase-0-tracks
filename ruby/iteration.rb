@@ -24,8 +24,12 @@ p house_paint
 
 puts "\nAfter .each call:"
 house_paint.each do |room, color|
+	color = "black"
 	puts "The #{room} will be painted #{color}!"
 end
+
+puts "\n.each call didn't permanently change anything:"
+p house_paint
 
 puts "\nBefore .map call:"
 p house_paint
@@ -33,33 +37,53 @@ p house_paint
 puts "\nAfter .map call:"
 house_paint.map do |room, color|
 	color = "white"
-	p color
+	puts "The #{room} will be painted #{color}!"
 end
+
 puts "\n.map call didn't permanently change anything:"
 p house_paint
 
 
 puts "\nArray"
-# Before .each call
+puts "Before .each call:"
 furniture = ["sofa", "desk", "dining table", "bed"]
 p furniture
 
-# After .each call
+puts "\nAfter .each call"
 puts "These are the pieces we own: " 
 furniture.each do |piece| 
+	piece = "footstool"
 	puts "#{piece}"
 end
 
-# Before .map call
+puts "\n.each did not permanently change anything:"
 p furniture
 
-# After .map call
+puts "\nBefore .map call:"
+p furniture
+
+puts "\nAfter .map call:"
 	puts "These are the pieces we own: " 
-	furniture.map do |piece| 
+	furniture.map do |piece|
+		piece = "nightstand" 
 		puts "#{piece}"
 end
 
-# .map call didn't permanently change anything
+puts "\n.map did not permanently change anything:"
+p furniture
+
+puts "\nBefore .map! call:"
+p furniture
+
+puts "\nAfter .map! call:"
+	puts "These are the pieces we own: " 
+		furniture.map! do |piece|
+			piece.reverse!
+end
+
+puts furniture
+
+puts "\n.map! call did permanently change the furniture"
 p furniture
 
 
