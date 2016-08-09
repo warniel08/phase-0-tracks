@@ -86,6 +86,59 @@ puts furniture
 puts "\n.map! call did permanently change the furniture"
 p furniture
 
+puts "\n"
+# Array
+letters = ["a", "b", "c", "d", "e", "f"]
+
+puts "Before delete_if method is called:"
+p letters
+
+puts "\nAfter delete_if method is called:"
+letters.delete_if { |letter| letter < "c" }
+p letters
+
+puts "\n"
+# Hash
+numbers = {
+	1 => "one",
+	2 => "two",
+	3 => "three",
+	4 => "four",
+	5 => "five",
+	6 => "six",
+	7 => "seven",
+	8 => "eight"
+}
+
+puts "Before delete_if method is called:"
+p numbers
+
+puts "\nAfter delete_if method is called:"
+numbers.delete_if { |digit, word| digit < 3 }
+p numbers
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
