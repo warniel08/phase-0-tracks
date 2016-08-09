@@ -88,7 +88,7 @@ p furniture
 
 puts "\n"
 # Array
-letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i"]
+letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"]
 
 puts "\nBefore .delete_if method is called:"
 p letters
@@ -111,6 +111,14 @@ puts "\nAfter .select! method is called:"
 letters.select! { |letter| letter > "f" }
 p letters 
 
+puts "\nBefore .drop_while method is called:"
+p letters
+
+puts "\nAfter .drop_while method is called:"
+new_letters = letters.drop_while { |letter| letter < "i" }
+p new_letters
+# This shows new_letters is false 
+p new_letters == true
 
 puts "\n"
 # Hash
@@ -122,7 +130,9 @@ numbers = {
 	5 => "five",
 	6 => "six",
 	7 => "seven",
-	8 => "eight"
+	8 => "eight",
+	9 => "nine",
+	10 => "ten"
 }
 
 puts "Before .delete_if method is called:"
@@ -145,6 +155,17 @@ p numbers
 puts "\nAfter .select! method is called:"
 numbers.select! { |digit, word| digit > 6 }
 p numbers
+
+puts "\nBefore .reject! method is called:"
+p numbers
+
+puts "\nAfter .reject! method is called:"
+numbers.reject! { |digit, word| digit < 9 }
+p numbers
+# Shows reject! returns false
+p numbers == true
+
+
 
 
 
