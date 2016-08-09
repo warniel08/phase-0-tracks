@@ -22,7 +22,7 @@ print "\nPlease enter your first and last name: "
 name = gets.chomp
 
 print "How many children do you have? "
-number_of_children = gets.chomp
+number_of_children = gets.chomp.to_i
 
 print "What is your preferred decor theme? "
 decor_theme = gets.chomp
@@ -31,10 +31,10 @@ print "What is your favorite shade of green? "
 shade_of_green = gets.chomp
 
 print "How many rooms do you have in your home? "
-number_of_rooms = gets.chomp
+number_of_rooms = gets.chomp.to_i
 
 print "How many years have you lived in your home? "
-number_of_years = gets.chomp
+number_of_years = gets.chomp.to_f
 
 print "Do you watch HGTV (y/n)? "
 watch_hgtv = gets.chomp
@@ -50,30 +50,39 @@ user = {
 	watch_hgtv: watch_hgtv,
 }
 
-user.each do |k, v|
-	puts "\n#{k}: #{v}"
+puts "\n"
+user.each do |question, answer|
+	puts "#{question}: #{answer}"
 end
 
-#puts "\nName: #{user[:name]}"
-#puts "Number of children: #{user[:number_of_children]}"
-#puts "Favorite decor theme: #{user[:decor_theme]}"
-#puts "Favorite shade of green: #{user[:shade_of_green]}"
-#puts "Number of rooms in home: #{user[:number_of_rooms]}"
-#puts "Number of years lived in home: #{user[:number_of_years]}"
-#puts "Watch HGTV: #{user[:watch_hgtv]}"
+puts "\nWould you like to udpate any information?"
+puts "Type 'name' to change your name."
+puts "Type 'children' to change the number of children."
+puts "Type 'theme' to change decor theme."
+puts "Type 'shade' to change shade of green."
+puts "Type 'rooms' to change number of rooms."
+puts "Type 'years' to change number of years."
+puts "Type 'watch' to change if you watch HGTV or not."
 
-#print "What changes would you like to make to the data?"
-#change = gets.chomp
+choice = gets.chomp.downcase
+case choice
+when 'name'
+	print "Please enter correct name: "
+	name_change = gets.chomp
+	answer = user[name_change]
+	puts "Thank you #{answer}."
+end
 
-#if change == "none"
-#	puts "\nName: #{user[:name]}"
-#	puts "Number of children: #{user[:number_of_children]}"
-#	puts "Favorite decor theme: #{user[:decor_theme]}"
-#	puts "Favorite shade of green: #{user[:shade_of_green]}"
-#	puts "Number of rooms in home: #{user[:number_of_rooms]}"
-#	puts "Number of years lived in home: #{user[:number_of_years]}"
-#	puts "Watch HGTV: #{user[:watch_hgtv]}"
-#elsif 
+p user
+		
+
+
+
+
+
+
+
+
 
 
 
