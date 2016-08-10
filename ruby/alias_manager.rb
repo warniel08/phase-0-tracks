@@ -12,20 +12,19 @@ def name_swap(name)
 	name = name.join(' ')
 end
 
-def vowel_change(name_string)
-	vowels = "aeiou".chars
+def vowel_pull(name_string)
+	index = 0
+	name_string = name_string.downcase
 	name_string = name_string.split('')
-	
-	for name_string in vowels do
-			vowels.map! { |vowel| vowel.next }
-	end
-		#name_string.map! { |letter| letter.next }
-		#name_string.join('')
+	vowels = name_string.select { |vowel| vowel =~ /[aeiou]/}
 end
 
-p name_swap("Warner Nielsen")
-p vowel_change(name_swap("Warner Nielsen"))
+#p name_swap("Warner Nielsen")
+p vowel_pull("Eric Estrada")
+#p vowel_pull(name_swap("Warner Nielsen"))
 
 
 
 
+#name_string.each { |letter| letter.next }
+#name_string.join('')
