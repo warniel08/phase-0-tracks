@@ -13,29 +13,58 @@ def name_swap(name)
 end
 
 def vowel_change(name_vowels)
+	vowels = ["a", "e", "i", "o", "u"]
+	consonants = %w[b c d f g h j k l m n p q r s t v w x y z]
 	name_vowels = name_vowels.downcase
 	name_vowels = name_vowels.split('')
-	vowels = name_vowels.select { |vowel| vowel =~ /[aeiou]/}
+	vowels_change = name_vowels.map do |letter| 
+		if vowels.include?(letter)
+			vowels.rotate(1)[vowels.index(letter)]
+		elsif consonants.include?(letter)
+			consonants.rotate(1)[consonants.index(letter)]
+		elsif letter == "u"
+			letter = "a"
+		elsif letter == "z"
+			letter = "b"
+		else
+			letter = " "
+		end
+	end
+	vowels_change.join
 end
 
-def letter_change(name_letters)
-	#name_letters = name_letters.downcase
-	p name_letters = name_letters.split(" ")
-	#p name_letters = name_letters[0].split("")
-	#p change_letters = name_letters.map! { |letter| letter.next }
-	p ln_letters = name_letters[1].split("")
-	p ln_change_letters = ln_letters.map! { |letter| letter.next }
-	#full_name_change_letters = change_letters.join + " " + ln_change_letters.join
-end
-
-
-#p name_swap("Warner Nielsen")
-#p vowel_change("Warner Nielsen")
-p letter_change("Warner Nielsen")
-#p letter_change(name_swap("Warner Nielsen"))
+p vowels = vowel_change("Felicia Torres")
+#first_name = fn_letter_change("Felicia Torres")
+#puts first_name + vowels
+#last_name = ln_letter_change("Felicia Torres")
+#puts full_name = first_name + " " + last_name
+#p name_swap(full_name)
 
 
 
+#def fn_letter_change(name_letters)
+#	consonants = %w[b c d f g h j k l m n p q r s t v w x y z]
+#	name_letters = name_letters.downcase
+#	name_letters = name_letters.split(" ")
+#	name_letters = name_letters[0].split("")
+#	change_letters = name_letters.map! do |letter|
+#		if consonants.include?(letter)
+#			consonants.rotate(1)[consonants.index(letter)]
+#		else
+#			letter = " "
+#		end
+#	end
+#	#change_letters.join
+#end
+#
+#def ln_letter_change(ln_letters)
+#	consonants = %w[b c d f g h j k l m n p q r s t v w x y z]
+#	ln_letters = ln_letters.downcase
+#	ln_letters = ln_letters.split(" ")
+#	ln_letters = ln_letters[1].split("")
+#	ln_change_letters = ln_letters.map! { |letter| letter.next }
+#	ln_change_letters.join
+#end
 
 
 
