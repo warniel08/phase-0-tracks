@@ -9,7 +9,7 @@
 def name_swap(name)
 	name = name.split(' ')
 	name = name.reverse
-	name = name.join(' ')
+	#name = name.join(' ')
 end
 
 def vowel_change(name_vowels)
@@ -19,13 +19,20 @@ def vowel_change(name_vowels)
 end
 
 def letter_change(name_letters)
-	
+	#name_letters = name_letters.downcase
+	p name_letters = name_letters.split(" ")
+	#p name_letters = name_letters[0].split("")
+	#p change_letters = name_letters.map! { |letter| letter.next }
+	p ln_letters = name_letters[1].split("")
+	p ln_change_letters = ln_letters.map! { |letter| letter.next }
+	#full_name_change_letters = change_letters.join + " " + ln_change_letters.join
 end
 
+
 #p name_swap("Warner Nielsen")
-p vowel_change("Warner Nielsen")
-#p letter_change("Warner Nielsen")
-#p vowel_change(name_swap("Warner Nielsen"))
+#p vowel_change("Warner Nielsen")
+p letter_change("Warner Nielsen")
+#p letter_change(name_swap("Warner Nielsen"))
 
 
 
