@@ -67,6 +67,17 @@ loop do
 			end
 end
 
+puts "\nThis message will self-destruct in 5 seconds..."
+sleep 1
+time = %w[ 5 4 3 2 1 ]
+time.length.times do |x| 
+	puts time[x] + "..."
+	sleep 1
+end
+puts "Goodbye!"
+sleep 1
+system "clear"
+
 
 
 
