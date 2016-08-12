@@ -5,11 +5,14 @@
 
 # Change all vowels to the next vowel in 'aeiou', and all consonants to the next 
 # consonant in the alphabet. 
+# => create if/else to check if vowels/consonants are included in name, if they are
+# => rotate position in array, use index positions to swap out that index number for 
+# => letter if there is a "u" swap that for "a", if there is a "z", swap that for "b", 
+# => if there is a " ", leave it
 
 def name_swap(name)
 	name = name.split(" ")
 	name = name.reverse
-	name = name.join(" ")
 end
 
 def name_change(name_letters)
@@ -30,7 +33,7 @@ def name_change(name_letters)
 			letter = "a"
 		elsif letter == "z"
 			letter = "b"
-		else
+		elsif letter == " "
 			letter = " "
 		end
 	end
@@ -38,13 +41,12 @@ def name_change(name_letters)
 end
 
 
+p name = name_swap(name_change("Felicia Torres"))
+p first_name = name[0].capitalize
+p last_name = name[1].capitalize
+p full_name = first_name + " " + last_name
 
 
-puts name_swap(name_change("Felicia Torres"))
-#first_name = fn_letter_change("Felicia Torres")
-#puts first_name + vowels
-#last_name = ln_letter_change("Felicia Torres")
-#puts full_name = first_name + " " + last_name
-#p name_swap(full_name)
+
 
 
