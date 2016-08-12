@@ -40,11 +40,30 @@ def name_change(name_letters)
 	letters_change.join
 end
 
+puts "\nThe Great Alias Maker"
 
-p name = name_swap(name_change("Felicia Torres"))
-p first_name = name[0].capitalize
-p last_name = name[1].capitalize
-p full_name = first_name + " " + last_name
+alias_name = ""
+
+loop do 
+	print "(Type 'quit' when finished) Please enter a name you would like to create an alias for: " 
+		alias_name = gets.chomp
+		if alias_name
+			alias_name = name_swap(name_change(alias_name))
+			first_name = alias_name[0].capitalize
+			last_name = alias_name[1].capitalize
+			full_name = first_name + " " + last_name
+			puts "Your new alias is #{full_name}."
+			break
+		elsif alias_name == "quit"
+			break
+		else
+			puts "Sorry please try again!"
+	end
+end
+
+
+
+
 
 
 
