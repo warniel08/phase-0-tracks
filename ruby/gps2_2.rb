@@ -12,6 +12,15 @@
   # print the list to the console, make method to print
 # output: hash with quantity
 
+$grocery_list = {}
+
+def create_list(items_string)
+	item_array = items_string.split(" ")
+	item_array.each do |item| 
+		$grocery_list.store(item,0)
+	end
+end
+
 # Method to add an item to a list
 # input: item name as key and optional quantity as value
 # steps: 
@@ -20,6 +29,11 @@
 		# print item and new quantity 
 # output: print that item is printed to the list
 
+
+def add_item(item, quant=0)
+	$grocery_list.store(item, quant)
+end
+
 # Method to remove an item from the list
 # input: key or item name 
 # steps: 
@@ -27,6 +41,10 @@
 		# key that user inputs use delete method
 		# print this item was deleted
 # output: new hash without deleted item
+
+def remove_item(item)
+	$grocery_list.delete(item)
+end
 
 # Method to update the quantity of an item
 # input: key or item name
