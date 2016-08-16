@@ -19,10 +19,9 @@ def create_list(items_string)
 	item_array.each do |item| 
 		$grocery_list.store(item,0)
 	end
-	p $grocery_list
 end
 
-items = "carrots cucumbers onions fish chicken"
+items = "bananas cheese bread limes"
 p create_list(items)
 
 # Method to add an item to a list
@@ -36,13 +35,14 @@ p create_list(items)
 
 def add_item(item, quant=0)
 	$grocery_list.store(item, quant)
-	p $grocery_list
+	p "You added #{item} to your list."
 end
 
-item = "cabbage"
-quant = 2
-p add_item(item)
-p add_item(item, quant)
+add_item("bananas", 8)
+add_item("Lemonade", 2)
+add_item("Tomatoes", 3)
+add_item("Onions", 1)
+add_item("Ice Cream", 4)
 
 # Method to remove an item from the list
 # input: key or item name 
@@ -50,15 +50,16 @@ p add_item(item, quant)
 		# ask user what they want to remove from shopping list
 		# key that user inputs use delete method
 		# print this item was deleted
-# output: new hash without deleted item
+# output: print statement of which item crossed off, new hash without deleted item
 
 def remove_item(item)
 	$grocery_list.delete(item)
+	p "You crossed off #{item} from your list."
 end
 
-#item = "cabbage"
-#remove_item(item)
-#p $grocery_list
+remove_item("Lemonade")
+remove_item("Onions")
+p $grocery_list
 
 # Method to update the quantity of an item
 # input: key or item name
@@ -66,13 +67,16 @@ end
 		# ask user for specific item they want to change the quantity for
 		# ask user new quantity of item 
 		# updating item with new quantity
-# output: new hash with item quantity updated
+# output: print statement of updated item and quanitity, 
+# new hash with item quantity updated
 
 def update_quant(item, quant)
 	$grocery_list.store(item, quant)
+	p "You updated #{item} number to #{quant}."
 end
 
-update_quant("cabbage", 4)
+update_quant("Ice Cream", 7)
+update_quant("limes", 2)
 p $grocery_list
 
 
