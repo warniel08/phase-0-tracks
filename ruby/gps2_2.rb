@@ -19,7 +19,11 @@ def create_list(items_string)
 	item_array.each do |item| 
 		$grocery_list.store(item,0)
 	end
+	p $grocery_list
 end
+
+items = "carrots cucumbers onions fish chicken"
+p create_list(items)
 
 # Method to add an item to a list
 # input: item name as key and optional quantity as value
@@ -32,7 +36,13 @@ end
 
 def add_item(item, quant=0)
 	$grocery_list.store(item, quant)
+	p $grocery_list
 end
+
+item = "cabbage"
+quant = 2
+p add_item(item)
+p add_item(item, quant)
 
 # Method to remove an item from the list
 # input: key or item name 
@@ -46,6 +56,10 @@ def remove_item(item)
 	$grocery_list.delete(item)
 end
 
+#item = "cabbage"
+#remove_item(item)
+#p $grocery_list
+
 # Method to update the quantity of an item
 # input: key or item name
 # steps:
@@ -54,9 +68,25 @@ end
 		# updating item with new quantity
 # output: new hash with item quantity updated
 
+def update_quant(item, quant)
+	$grocery_list.store(item, quant)
+end
+
+update_quant("cabbage", 4)
+p $grocery_list
+
+
 # Method to print a list and make it look pretty
 # input: hash list of items created
 # steps:
 		# .each method to iterate through all items and print quantity and item
-		# print "You have item: quantity"
+		# print "You have #{quantity} #{item}."
 # output: pretty, updated list
+
+def print_list(list)
+	list.each do |item, quant|
+		puts "You have #{quant} #{item}."
+	end
+end
+
+print_list($grocery_list)
