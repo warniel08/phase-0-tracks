@@ -1,6 +1,9 @@
 class Santa
+	# defaults
+	reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+	age = 0
+
 	# Create 3 methods:
-	
 	# speak
 	def speak
 		puts "Ho, ho, ho! Haaaappy holidays!" 
@@ -12,12 +15,40 @@ class Santa
 	end
 	
 	# initialize
-	def initialize
-		puts "Initializing Santa instance..."
+	def initialize(gender, ethnicity)
+		#puts "Initializing Santa instance..."
+		@gender = gender
+		@ethnicity = ethnicity
 	end
 end
 
-KrisKringle = Santa.new
+# new_Santa = Santa.new("male", "pirate")
+# p new_Santa
+# new_Santa.speak
+# new_Santa.eat_milk_and_cookies("chocolate chip")
+	
+santas = []
+genders = ["male", "female", "non", "alien", "N/A"]
+ethnicities = ["American", "alien", "unicorn", "white", "N/A"]
+genders.length.times do |i|
+	santas << Santa.new(genders[i], ethnicities[i])
+end
 
-KrisKringle.speak
-KrisKringle.eat_milk_and_cookies("chocolate chip")
+
+test = []
+santas.each do |genders, y|
+	puts "Creating new #{genders} gender Santa."
+	test << Santa.new(genders, y)
+	puts "There are now #{test.length} Santa(s)."
+	puts "-----"	
+end
+
+
+
+
+
+
+
+
+
+
