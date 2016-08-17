@@ -1,8 +1,4 @@
 class Santa
-	# defaults
-	@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-	@age = 0
-
 	# Create 3 methods:
 	# speak
 	def speak
@@ -19,11 +15,21 @@ class Santa
 		#puts "Initializing Santa instance..."
 		@gender = gender
 		@ethnicity = ethnicity
+		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+		@age = 0
+	end
+
+	#getter methods
+	def gender
+		@gender
+	end
+
+	def ethnicity
+		@ethnicity
 	end
 end
 
-# new_Santa = Santa.new("male", "pirate")
-# p new_Santa
+# new_Santa = Santa.new
 # new_Santa.speak
 # new_Santa.eat_milk_and_cookies("chocolate chip")
 	
@@ -34,16 +40,5 @@ santas << Santa.new("none", "unicorn")
 santas << Santa.new("agender", "white")
 santas << Santa.new("N/A", "N/A")
 
-test = []
-santas.each do |gender, ethnicity|
-	test << Santa.new(gender, ethnicity)
-	print "#{gender}"
-end
-
-#p santas.index(0)
-
-
-
-	
-	
+p santas
 
