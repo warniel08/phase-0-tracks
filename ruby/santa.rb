@@ -19,9 +19,24 @@ class Santa
 		@age = 0
 	end
 
+	def celebrate_birthday(age)
+		age = @age+1
+	end
+
+	def get_mad_at(reindeer)
+		@reindeer_ranking.index do |x| 
+			if x == "reindeer"
+				
+			end
+	end
+
+	def gender=(new_gender)
+		@gender = new_gender
+	end
+
 	#getter methods
-	def gender
-		@gender
+	def age
+		@age
 	end
 
 	def ethnicity
@@ -33,12 +48,22 @@ end
 # new_Santa.speak
 # new_Santa.eat_milk_and_cookies("chocolate chip")
 	
-santas = []
-santas << Santa.new("male", "American")
-santas << Santa.new("female", "alien")
-santas << Santa.new("none", "unicorn")
-santas << Santa.new("agender", "white")
-santas << Santa.new("N/A", "N/A")
+# santas = []
+# santas << Santa.new("male", "American")
+# santas << Santa.new("female", "alien")
+# santas << Santa.new("none", "unicorn")
+# santas << Santa.new("agender", "white")
+# santas << Santa.new("N/A", "N/A")
 
-p santas
+
+#test = Santa.new("male", "alien")
+#p "#{test.age} and #{test.ethnicity}"
+
+test = Santa.new("none", "unicorn")
+x = test.get_mad_at("Dancer")
+p x
+
+
+
+
 
