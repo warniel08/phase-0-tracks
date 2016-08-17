@@ -1,7 +1,7 @@
 class Santa
 	# defaults
-	reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-	age = 0
+	@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+	@age = 0
 
 	# Create 3 methods:
 	# speak
@@ -28,27 +28,22 @@ end
 # new_Santa.eat_milk_and_cookies("chocolate chip")
 	
 santas = []
-genders = ["male", "female", "non", "alien", "N/A"]
-ethnicities = ["American", "alien", "unicorn", "white", "N/A"]
-genders.length.times do |i|
-	santas << Santa.new(genders[i], ethnicities[i])
-end
-
+santas << Santa.new("male", "American")
+santas << Santa.new("female", "alien")
+santas << Santa.new("none", "unicorn")
+santas << Santa.new("agender", "white")
+santas << Santa.new("N/A", "N/A")
 
 test = []
-santas.each do |genders, y|
-	puts "Creating new #{genders} gender Santa."
-	test << Santa.new(genders, y)
-	puts "There are now #{test.length} Santa(s)."
-	puts "-----"	
+santas.each do |gender, ethnicity|
+	test << Santa.new(gender, ethnicity)
+	print "#{gender}"
 end
 
+#p santas.index(0)
 
 
 
-
-
-
-
-
+	
+	
 
