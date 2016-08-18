@@ -94,3 +94,18 @@ def print_list(list)
 end
 
 print_list($grocery_list)
+
+# On your own, add a commented reflection section to your gps2_2.rb file. Answer the following questions in your reflection:
+
+# What did you learn about pseudocode from working on this challenge?
+# => I learned that pseudocode is very helpful in breaking down your steps in plain English so that when you code you just have to put in the technical syntax to make it work properly.
+# What are the tradeoffs of using arrays and hashes for this challenge?
+# => You can use an array, but you would have to create multiple arrays to take in both items and quantities. Hashes in my opinion are easier to use in this assignment because you are working with a key/value pair and can just work with those.
+# What does a method return?
+# => Implicitly the method returns the last line of the method, or if you explicitly state return(something) earlier in the method then the method will return that something sooner than the last line of code.
+# What kind of things can you pass into methods as arguments?
+# => It depends on what the method is processing. If you pass in strings to a method that processes integers then it won't work. But you can pass anything to a method in general.
+# How can you pass information between methods?
+# => In your driver code you can store the method return in a variable and then continue manipulating that variable with different method returns.
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+# => The importance of pseudocode was solidified. How to pass information between methods without setting global variables. Refactoring properly is still a bit hazy for me, but I know it will get better. And how to better clean up my code. It will just take practice.
