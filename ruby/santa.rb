@@ -35,6 +35,11 @@ class Santa
 	#getter methods
 	attr_reader :ethnicity
 
+	#print class object attributes as string
+	def to_s
+		puts "-- The attributes of your new Santa are -- \n\tGender: #{@gender}\n\tEthnicity: #{@ethnicity}\n\tAge: #{@age}"
+	end
+
 end
 
 # Drive code
@@ -61,20 +66,29 @@ end
 # test.get_mad_at = "Vixen"
 # p test
 
-santas = []
-genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "cis", "other", "two-spirit", "N/A"]
+#-------------------------------------------------
+# Assignment 6.3 Release 4
+#-------------------------------------------------
+
+genders = ["agender", "female", "alien", "male", "female", "gender fluid", "cis", "other", "two-spirit", "N/A"]
 ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "two or more races", "Native American", "Native Hawaiian", "N/A"]
 age = rand(0..140)
-p age
 
-5.times do |i|	
- santas << Santa.new(genders[i], ethnicities[i], age)
+genders_test = genders.sample
+ethnicities_test = ethnicities.sample
+age_test = age
+
+new_santa = []
+i = 1
+num = 10
+while i <= num
+	puts "\nSanta #{i}"
+	new_santa = Santa.new(genders_test, ethnicities_test, age_test)
+	new_santa.gender
+	new_santa.ethnicity
+	new_santa.age
+	new_santa.to_s
+	i += 1
 end
-
-p santas
-
-# santas << genders.sample
-# santas << ethnicities.sample
-# p santas
 
 
