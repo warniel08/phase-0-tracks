@@ -36,9 +36,9 @@ class Santa
 	attr_reader :ethnicity
 
 	#print class object attributes as string
-	def to_s
-		puts "-- The attributes of your new Santa are -- \n\tGender: #{@gender}\n\tEthnicity: #{@ethnicity}\n\tAge: #{@age}"
-	end
+	# def to_s
+	# 	puts "-- The attributes of your new Santa are -- \n\tGender: #{@gender}\n\tEthnicity: #{@ethnicity}\n\tAge: #{@age}"
+	# end
 
 end
 
@@ -70,25 +70,18 @@ end
 # Assignment 6.3 Release 4
 #-------------------------------------------------
 
-genders = ["agender", "female", "alien", "male", "female", "gender fluid", "cis", "other", "two-spirit", "N/A"]
-ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "two or more races", "Native American", "Native Hawaiian", "N/A"]
-age = rand(0..140)
 
-genders_test = genders.sample
-ethnicities_test = ethnicities.sample
-age_test = age
-
-new_santa = []
-i = 1
-num = 10
-while i <= num
-	puts "\nSanta #{i}"
-	new_santa = Santa.new(genders_test, ethnicities_test, age_test)
-	new_santa.gender
-	new_santa.ethnicity
-	new_santa.age
-	new_santa.to_s
-	i += 1
+50.times do |i|
+	genders = ["agender", "female", "alien", "male", "female", "gender fluid", "cis", "other", "two-spirit", "N/A"]
+	ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "two or more races", "Native American", "Native Hawaiian", "N/A"]
+	age = rand(0..140)
+	rand_gender = genders.sample
+	rand_ethnicity = ethnicities.sample
+	rand_age = age
+	puts "\nSanta #{i + 1}"
+	new_santa = Santa.new(rand_gender, rand_ethnicity, rand_age)
+	puts "-- The attributes of your new Santa are -- \n\tGender: #{new_santa.gender}\n\tEthnicity: #{new_santa.ethnicity}\n\tAge: #{new_santa.age}"
 end
+
 
 
