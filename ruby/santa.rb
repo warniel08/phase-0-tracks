@@ -1,22 +1,23 @@
 class Santa
 	# Create 3 methods:
-	# speak
+	
+	# speak method
 	def speak
 		puts "Ho, ho, ho! Haaaappy holidays!" 
 	end
 	
-	# eat_milk_and_cookies
+	# eat_milk_and_cookies method
 	def eat_milk_and_cookies(cookie_type)
 		puts "That was a good #{cookie_type} cookie!"
 	end
 	
-	# initialize
-	def initialize(gender, ethnicity)
+	# initialize method
+	def initialize(gender, ethnicity, age)
 		#puts "Initializing Santa instance..."
 		@gender = gender
 		@ethnicity = ethnicity
-		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-		@age = 0
+		#@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+		@age = age
 	end
 
 	#setter methods
@@ -25,63 +26,55 @@ class Santa
 	end
 
 	def get_mad_at=(reindeer)
-		index_0 = "Rudolph"
-		index_1 = "Dasher"
-		index_2 = "Dancer"
-		index_3 = "Prancer"
-		index_4 = "Vixen"
-		index_5 = "Comet"
-		index_6 = "Cupid"
-		index_7 = "Donner"
-		index_8 = "Blitzen"
-
-		if reindeer == "Rudolph"
-			@reindeer_ranking.insert(8, @reindeer_ranking.delete_at(0))
-		elsif reindeer == "Dasher"
-			@reindeer_ranking.insert(8, @reindeer_ranking.delete_at(1))
-		elsif reindeer == "Dancer"
-			@reindeer_ranking.insert(8, @reindeer_ranking.delete_at(2))
-		elsif reindeer == "Prancer"
-			@reindeer_ranking.insert(8, @reindeer_ranking.delete_at(3))
-		elsif reindeer == "Vixen"
-			@reindeer_ranking.insert(8, @reindeer_ranking.delete_at(4))
-		elsif reindeer == "Comet"
-			@reindeer_ranking.insert(8, @reindeer_ranking.delete_at(5))
-		elsif reindeer == "Cupid"
-			@reindeer_ranking.insert(8, @reindeer_ranking.delete_at(6))
-		elsif reindeer == "Donner"
-			@reindeer_ranking.insert(8, @reindeer_ranking.delete_at(7))
-		elsif reindeer == "Blitzen"
-			@reindeer_ranking.insert(8, @reindeer_ranking.delete_at(8))
-		end
+		reindeer_name = @reindeer_ranking.delete(reindeer)
+		@reindeer_ranking << reindeer_name
 	end
 
-	attr_accessor :gender
+	attr_accessor :gender, :age, :reindeer_ranking, :ethnicity
 
 	#getter methods
-	attr_reader :age, :ethnicity
+	attr_reader :ethnicity
 
 end
 
-new_Santa = Santa.new("x", "y")
-new_Santa.speak
-new_Santa.eat_milk_and_cookies("chocolate chip")
+# Drive code
+# new_Santa = Santa.new("x", "y")
+# new_Santa.speak
+# new_Santa.eat_milk_and_cookies("chocolate chip")
 	
-santas = []
-santas << Santa.new("male", "American")
-santas << Santa.new("female", "alien")
-santas << Santa.new("none", "unicorn")
-santas << Santa.new("agender", "Canadian")
-santas << Santa.new("N/A", "N/A")
+# santas = []
+# santas << Santa.new("male", "American")
+# santas << Santa.new("female", "alien")
+# santas << Santa.new("none", "unicorn")
+# santas << Santa.new("agender", "Canadian")
+# santas << Santa.new("N/A", "N/A")
 
-puts 
-test = Santa.new("none", "falcon")
-p test
-test.gender = "male"
-p test
-puts "#{test.ethnicity}"
-test_age = test.celebrate_birthday = 2
-p test
-puts "#{test.age}"
-x = test.get_mad_at=("Vixen")
-p test
+# puts 
+# test = Santa.new("none", "falcon")
+# p test
+# test.gender = "male"
+# p test
+# puts "#{test.ethnicity}"
+# test.celebrate_birthday = 22
+# p test
+# puts "#{test.age}"
+# test.get_mad_at = "Vixen"
+# p test
+
+santas = []
+genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "cis", "other", "two-spirit", "N/A"]
+ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "two or more races", "Native American", "Native Hawaiian", "N/A"]
+age = rand(0..140)
+p age
+
+5.times do |i|	
+ santas << Santa.new(genders[i], ethnicities[i], age)
+end
+
+p santas
+
+# santas << genders.sample
+# santas << ethnicities.sample
+# p santas
+
+
