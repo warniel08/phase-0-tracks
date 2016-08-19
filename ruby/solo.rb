@@ -74,7 +74,7 @@ class Dwarf
 
 	def loads_mined(number_of_loads)
 		if number_of_loads < 7
-			puts "\n#{@name} has only mined #{number_of_loads} loads today. \nI don't care that you are #{@age} years old, \nget back out there and work. "
+			puts "\n#{@name} has only mined #{number_of_loads} loads today. \nI don't care that you are #{@age} years old. \nGet back out there and work. "
 		elsif number_of_loads >= 7
 			puts "\n#{@name} has mined #{number_of_loads} loads today. Great day of work.\nEspecially for a #{@age} year old."
 		end
@@ -120,6 +120,7 @@ puts "into the dwarf generator. Have fun!"
 puts "\nType 'exit' if you want to exit the Dwarf Generator."
 puts "Hit 'Enter' if you would like to continue..."
 user_input = gets.chomp
+my_dwarf_array = []
 
 until user_input == 'exit'
 
@@ -152,10 +153,10 @@ until user_input == 'exit'
 	user_still_working = gets.chomp
 		if user_still_working == "y"
 			user_still_working = true
-			puts "#{user_name} is still working"
+			puts "#{user_name} is still working."
 		else
 			user_still_working = false
-			puts "#{user_name} is not working"
+			puts "#{user_name} is not working."
 		end
 	user_data << user_still_working
 
@@ -170,7 +171,13 @@ until user_input == 'exit'
 		my_dwarf.loads_mined(user_number_of_loads)
 		my_dwarf.hours_worked(user_hours)
 		my_dwarf.whistle
-		puts "\nWould you like to enter input for a new dwarf? (y/n)"
+		print "\nChange your Dwarf's name to something else: "
+		my_dwarf.name = gets.chomp
+		puts "Dwarf's old name: #{user_name}\nDwarf's new name: #{my_dwarf.name}"
+		my_dwarf_array << my_dwarf.name
+		my_dwarf_array << my_dwarf.age
+		my_dwarf_array << my_dwarf.out_working
+		print "\nWould you like to enter input for a new dwarf? (y/n) "
 		user_again = gets.chomp
 			if user_again == "y"
 				puts "\nAlright.....\n"
@@ -183,6 +190,8 @@ until user_input == 'exit'
 
 end
 
+puts "\n"
+my_dwarf_array.each { | item | puts "#{item}" }
 
 #--------------------------------------------------------
 # Test Code
