@@ -53,7 +53,7 @@ class Dwarf
 	attr_reader :age
 
 	def initialize(age, name, out_working)
-		puts "Creating new dwarf..."
+		puts "\nCreating new dwarf..."
 		sleep 2
 		@age = age
 		@name = name
@@ -76,7 +76,7 @@ class Dwarf
 		if number_of_loads < 7
 			puts "\n#{@name} has only mined #{number_of_loads} loads today. \nI don't care that you are #{@age} years old, \nget back out there and work. "
 		elsif number_of_loads >= 7
-			puts "\n#{@name} has mined #{number_of_loads} loads today. Great day of work,\nespecially for a #{@age} year old."
+			puts "\n#{@name} has mined #{number_of_loads} loads today. Great day of work.\nEspecially for a #{@age} year old."
 		end
 	end
 
@@ -117,44 +117,76 @@ puts "\nWelcome to the Dwarf Generator"
 puts "\nI will prompt you to input some information"
 puts "into the dwarf generator. Have fun!"
 
-puts "\nType 'done' to let me know when you are finished with the Dwarf Generator."
+puts "\nType 'exit' if you want to exit the Dwarf Generator."
 puts "Hit 'Enter' if you would like to continue..."
 user_input = gets.chomp
 
-until user_input == 'done'
+until user_input == 'exit'
+
+	user_data = []
 	dwarves_names = ["Doc", "Grumpy", "Happy", "Sleepy", "Bashful", "Sneezy", "Dopey"]
 	puts "\n#{dwarves_names.join(" ")}"
 	puts "\nI will randomly assign your dwarf a name."
 	puts "Your dwarf is #{user_name = dwarves_names.sample}. Hello #{user_name}!"
+	user_data << user_name
 	
 	print "How old is #{user_name}? "
 	user_age = gets.chomp
 	user_age = user_age.to_i
 	puts "Wow, #{user_name} is #{user_age}. Good for him."
+	user_data << user_age
 
 	print "\nHow many human hours did #{user_name} work today? (Dwarves multiply human hours \nby 7 hours when they calculate how many hours they've worked) "
 	user_hours = gets.chomp
 	user_hours = user_hours.to_i
 	puts "#{user_name} worked #{user_hours} human hours today."
+	user_data << user_hours
 
 	print "\nHow many loads of jewels has #{user_name} mined today? "
 	user_number_of_loads = gets.chomp
 	user_number_of_loads = user_number_of_loads.to_i
 	puts "#{user_name} has mined #{user_number_of_loads} loads today."
+	user_data << user_number_of_loads
 
-	print "\nIs your dwarf still working?"
+	print "\nIs your dwarf still working? (y/n) "
 	user_still_working = gets.chomp
-		if user_still_working == "yes"
+		if user_still_working == "y"
 			user_still_working = true
-			p user_still_working
+			puts "#{user_name} is still working"
 		else
 			user_still_working = false
+			puts "#{user_name} is not working"
 		end
+	user_data << user_still_working
 
-	puts "\nType 'done' to let me know when you are finished with the Dwarf Generator."
-	puts "Hit 'Enter' if you would like to continue..."
+	puts "\nName: #{user_data[0]}\nAge: #{user_data[1]}\nHours: #{user_data[2]}\nLoads: #{user_data[3]}\nWorking: #{user_data[4]}"
+
+	puts "\nHit 'enter' to generate your new dwarf."
+	puts "Type 'exit' if you would like to exit the Dwarf Generator."
 	user_input = gets.chomp
+
+	if user_input == ""
+		my_dwarf = Dwarf.new(user_age, user_name, user_still_working)
+		my_dwarf.loads_mined(user_number_of_loads)
+		my_dwarf.hours_worked(user_hours)
+		my_dwarf.whistle
+		puts "\nWould you like to enter input for a new dwarf? (y/n)"
+		user_again = gets.chomp
+			if user_again == "y"
+				puts "\nAlright.....\n"
+			else
+				break
+			end
+	elsif user_input == "exit"
+		break
+	end
+
 end
+
+
+#--------------------------------------------------------
+# Test Code
+#--------------------------------------------------------
 
 # Driver code
 # Variables test
