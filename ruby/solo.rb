@@ -215,8 +215,3 @@ my_dwarf_array.each { | item | puts "#{item}" }
 # puts "#{new_dwarf.name} is still #{new_dwarf.age} but has #{new_dwarf.out_working}."
 
 
-
-
-
-
-
