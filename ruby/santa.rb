@@ -16,33 +16,31 @@ class Santa
 		#puts "Initializing Santa instance..."
 		@gender = gender
 		@ethnicity = ethnicity
-		#@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
 		@age = age
+		#@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
 	end
 
 	#setter methods
-	def celebrate_birthday=(age_increase)
-		@age = age_increase + 1
-	end
+	# def celebrate_birthday=(age_increase)
+	# 	@age = age_increase + 1
+	# end
 
-	def get_mad_at=(reindeer)
-		reindeer_name = @reindeer_ranking.delete(reindeer)
-		@reindeer_ranking << reindeer_name
-	end
+	# def get_mad_at=(reindeer)
+	# 	reindeer_name = @reindeer_ranking.delete(reindeer)
+	# 	@reindeer_ranking << reindeer_name
+	# end
 
-	attr_accessor :gender, :age, :reindeer_ranking, :ethnicity
+	attr_accessor :gender, :age, :ethnicity #:reindeer_ranking
 
 	#getter methods
 	attr_reader :ethnicity
 
-	#print class object attributes as string
-	# def to_s
-	# 	puts "-- The attributes of your new Santa are -- \n\tGender: #{@gender}\n\tEthnicity: #{@ethnicity}\n\tAge: #{@age}"
-	# end
-
 end
 
-# Drive code
+#-------------------------------------------------
+# Assignment 6.3 Release 0-3
+#-------------------------------------------------
+# Driver code
 # new_Santa = Santa.new("x", "y")
 # new_Santa.speak
 # new_Santa.eat_milk_and_cookies("chocolate chip")
@@ -73,7 +71,7 @@ end
 
 50.times do |i|
 	genders = ["agender", "female", "alien", "male", "female", "gender fluid", "cis", "other", "two-spirit", "N/A"]
-	ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "two or more races", "Native American", "Native Hawaiian", "N/A"]
+	ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "two or more races", "Native American", "Pacific Islander", "N/A"]
 	cookies = ["snickerdoodle", "chocolate chip", "m&m", "sugar", "peanut butter", "fudge"]
 	rand_age = rand(0..140)
 	rand_gender = genders.sample
