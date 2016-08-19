@@ -10,7 +10,16 @@
 # => just create 7 different dwarves, make an array of each dwarves name
 # => randomize age in driver code so each dwarves age will be different 
 
-# 3 methods:
+# 3 methods and initialize method:
+
+# intialize method(arguments of age, name, out_working boolean)
+# => input: new class
+# => steps:
+			# PRINT "Creating new dwarf"
+			# age attribute
+			# name attribute
+			# out_working attribute
+# => output: all arguments
 
 # method_one loads_mined(argument of number_of_loads)
 # => input: integer
@@ -19,7 +28,7 @@
 				# => PRINT "Get back out there and work"
 			# => ELSIF loads >= 3
 				# => PRINT "Great day of work. Go rest!"
-# => output:
+# => output: depends on conditional
 
 # method_two is for hours_worked(argument of hours_integer)
 # => input: integer
@@ -35,12 +44,28 @@
 
 class Dwarf
 
+	attr_accessor :name, :out_working
+
+	attr_reader :age
+
 	def initialize(age, name, out_working)
 		puts "Creating new dwarf..."
 		sleep 2
 		@age = age
 		@name = name
 		@out_working = out_working
+	end
+
+	def age
+		@age
+	end
+
+	def name=(new_name)
+		@name = new_name
+	end
+
+	def out_working=(working)
+		@out_working = working
 	end
 
 	def loads_mined(number_of_loads)
@@ -80,11 +105,14 @@ out_working = [true, false].sample
 dwarves_names = ["Doc", "Grumpy", "Happy", "Sleepy", "Bashful", "Sneezy", "Dopey"].sample
 age = rand(40..150)
 num_loads = rand(0..14)
-num_hours = rand(0..48)
+num_hours = rand(0..24)
 new_dwarf = Dwarf.new(age, dwarves_names, out_working)
 new_dwarf.loads_mined(num_loads)
 new_dwarf.hours_worked(num_hours)
 new_dwarf.whistle
+new_dwarf.name = "The Dwarf Formerly Known as #{new_dwarf.name}"
+new_dwarf.out_working = "out sourced his work"
+puts "#{new_dwarf.name} is still #{new_dwarf.age} but has #{new_dwarf.out_working}."
 
 
 
