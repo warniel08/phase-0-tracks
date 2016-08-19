@@ -44,25 +44,47 @@ class Dwarf
 	end
 
 	def loads_mined(number_of_loads)
-		if number_of_loads < 3
-			puts "#{@name} has only mined #{number_of_loads} loads today. Get back out there and work."
-		elsif number_of_loads >= 3
-			puts "#{@name} has mined #{number_of_loads} loads today. Great day of work. Go rest!"
+		if number_of_loads < 7
+			puts "\n#{@name} has only mined #{number_of_loads} loads today. \nI don't care that you are #{@age} years old, \nget back out there and work. "
+		elsif number_of_loads >= 7
+			puts "\n#{@name} has mined #{number_of_loads} loads today. Great day of work,\nespecially for a #{@age} year old."
 		end
 	end
 
 	def hours_worked(hours_integer)
 		hours_integer = hours_integer * 7
-		puts "#{@name} has worked #{hours_integer} dwarf hours today."
+		if hours_integer < 49
+			print "#{@name} claims he has worked #{hours_integer} dwarf hours today. \nWhere is #{@name}? Is he working?"
+			if @out_working == true
+				puts " Yes"
+			else
+				puts " No"
+			end
+		elsif hours_integer >= 49
+			print "#{@name} has worked #{hours_integer} dwarf hours today. \nIs #{@name} still out working?"
+			if @out_working == true
+				puts " Yes"
+			else 
+				puts " No"
+			end
+		end
 	end 
+
+	def whistle
+		puts "Just whistle while you work..."
+	end
 
 end
 
-dwarves_names = ["Doc", "Grumpy", "Happy", "Sleepy", "Bashful", "Sneezy", "Dopey"]
-rand_dwarf = dwarves_names.sample
-new_dwarf = Dwarf.new(45, rand_dwarf, true)
-new_dwarf.loads_mined(3)
-new_dwarf.hours_worked(4)
+out_working = [true, false].sample
+dwarves_names = ["Doc", "Grumpy", "Happy", "Sleepy", "Bashful", "Sneezy", "Dopey"].sample
+age = rand(40..150)
+num_loads = rand(0..14)
+num_hours = rand(0..48)
+new_dwarf = Dwarf.new(age, dwarves_names, out_working)
+new_dwarf.loads_mined(num_loads)
+new_dwarf.hours_worked(num_hours)
+new_dwarf.whistle
 
 
 
