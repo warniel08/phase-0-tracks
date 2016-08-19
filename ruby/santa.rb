@@ -74,12 +74,15 @@ end
 50.times do |i|
 	genders = ["agender", "female", "alien", "male", "female", "gender fluid", "cis", "other", "two-spirit", "N/A"]
 	ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "two or more races", "Native American", "Native Hawaiian", "N/A"]
-	age = rand(0..140)
+	cookies = ["snickerdoodle", "chocolate chip", "m&m", "sugar", "peanut butter", "fudge"]
+	rand_age = rand(0..140)
 	rand_gender = genders.sample
 	rand_ethnicity = ethnicities.sample
-	rand_age = age
+	rand_cookie = cookies.sample
 	puts "\nSanta #{i + 1}"
 	new_santa = Santa.new(rand_gender, rand_ethnicity, rand_age)
+	new_santa.speak
+	new_santa.eat_milk_and_cookies(rand_cookie)
 	puts "-- The attributes of your new Santa are -- \n\tGender: #{new_santa.gender}\n\tEthnicity: #{new_santa.ethnicity}\n\tAge: #{new_santa.age}"
 end
 
