@@ -7,9 +7,17 @@
 //string
 //Output: reversed string
 
-str = "hello";
-reversedStr = "";
+var str = "hello";
+var reversedStr = "";
 
-for (var i=0; i > str.length; i--) {
-	console.log(str.lastIndexOf(i));
-	}
+//how to take the last letter out of the string and put it in reversedStr?????
+
+var strLength = str.length;
+var counterLength = strLength;
+
+for (var i=0; i < counterLength; i++){
+	var reversedStr = reversedStr + str.substr(strLength-1, 1);
+	strLength = strLength-1;
+}
+
+console.log("The string: " + str + " \nBecomes: " + reversedStr);
