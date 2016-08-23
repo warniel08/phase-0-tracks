@@ -18,13 +18,13 @@ class VirusPredictor
   end
 # virus_effects is a method calling two other methods predicted_deaths and speed_of_spread
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths
+    speed_of_spread
   end
 # methods above are normal, methods below are private, public methods can be called outside of class, cannot call private methods outside of class but can still be called within class
   private
 # takes three arguments with diff levels of pop dens and performing calc based on density of each state, then outputs result
-  def predicted_deaths(population_density, population, state)
+  def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
@@ -42,7 +42,7 @@ class VirusPredictor
 
   end
 # takes three arguments with diff levels of pop dens and performing calc based on density of each state, then outputs result
-  def speed_of_spread(population_density, state) #in months
+  def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
