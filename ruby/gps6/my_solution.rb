@@ -80,3 +80,10 @@ end
 
 #=======================================================================
 # Reflection Section
+
+# What are the differences between the two different hash syntaxes shown in the state_data file? One hash uses the hash rocket => to make the key/value pair, and the other uses the symbol as the key and integer as value like value: data. Just need to remember when you use a string versus symbol so you can call the correct data type.
+# What does require_relative do? How is it different from require? Require relative allows you to access the data from a file that is in the same working directory that your working file is one. If you use require then you have to specify the direct path that the file is in.
+# What are some ways to iterate through a hash? Some ways to iterate through a hash are using a loop like while, for, loop, or you can use .each and it will allow you to access each element in the hash.
+# When refactoring virus_effects, what stood out to you about the variables, if anything? I liked the variables. I didn't refactor anything because I felt like the if/else statements were pretty descriptive and got the job done.
+# What concept did you most solidify in this challenge? The concepts that were solidified in this challenge were .each with nested hashes and using instance variables accrossed methods. I was already familiar with each but it was very helpful to readdress them and practice the concepts again.
+
