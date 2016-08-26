@@ -21,7 +21,13 @@ var longest = function() {
 	for (var i = 0; i < words.length; i++) {
 		if (words[i].length > 5) {
 			tie_array.push(words[i]);
-			console.log(tie_array);
+			if (tie_array.length > 1) {
+				if (tie_array[0].length > tie_array[1].length) {
+					console.log(tie_array[0]);
+				} else {
+					console.log(tie_array[1]);
+				}
+			}
 		}
 	}
 }
