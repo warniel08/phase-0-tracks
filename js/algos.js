@@ -13,5 +13,18 @@
 	// once the sorting is done, use a method to take the last value in the array and PRINT it to the screen
 // Output: longest phrase will be printed to the screen
 
+var longest = function() {
 
+	var words = ["apple", "gold", "building", "house", "tent", "screen"];
+	var tie_array = [];
+
+	for (var i = 0; i < words.length; i++) {
+		if (words[i].length > 5) {
+			tie_array.push(words[i]);
+			console.log(tie_array);
+		}
+	}
+}
+
+longest()
 
