@@ -14,27 +14,32 @@
 				// PRINT "The longest word is + the new array index 0 or 1"
 // Output: longest word will be printed to the screen
 
-var longest = function() {
+var longest = function(array) {
 
-	var words = ["apple", "gold", "building", "house", "screen", "sanctuary"];
+	var words = array;
 	var tie_array = [];
 
 	console.log(words)
 
 	for (var i = 0; i < words.length; i++) {
-		if (words[i].length > 6) {
+		if (words[i].length >= 6) {
 			tie_array.push(words[i]);
 			//only works if there are two words greater than 5 letters long
-			if (tie_array.length == 2) { 
-				if (tie_array[0].length > tie_array[1].length) {
+			if (tie_array.length === 2) { 
+				if (tie_array[0].length === tie_array[1].length) {
+					console.log("There was a tie between: " + tie_array[0] + " and " + tie_array[1]);
+				}	else if (tie_array[0].length > tie_array[1].length) {
 					console.log("The longest word is: " + tie_array[0]);
 				} else {
-					console.log("The longes word is: " + tie_array[1]);
+					console.log("The longest word is: " + tie_array[1]);
 				}
 			}
 		}
 	}
 }
 
-longest()
+var words_array = ["apple", "gold", "building", "house", "screen", "sanctuary"];
+var another_array = ["tent", "golf", "high", "five", "secret", "garden"];
+longest(words_array);
+longest(another_array);
 
