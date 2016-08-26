@@ -44,6 +44,7 @@ var words_array = ["apple", "gold", "building", "house", "screen", "sanctuary"];
 var another_array = ["tent", "golf", "high", "five", "secret", "garden"];
 longest(words_array);
 longest(another_array);
+console.log();
 
 //--------------------------------------------------------------
 // Release 1
@@ -63,8 +64,31 @@ longest(another_array);
 			//ELSE return false
 
 
+var compareObjects = function(object1, object2) {
+	var compare1 = object1;
+	var compare2 = object2;
+	
+	var compare1Keys = Object.keys(compare1);
+	//console.log(compare2);
+	
+	/*for (var i = 0; i < compare1.length; i++) {
+		console.log(compare1)	
+	}*/
+}
 
+var object1 = {
+	name: "Bill",
+	age: 23,
+	phone: "555-555-2424"
+}
 
+var object2 = {
+	name: "Fred",
+	books: 35,
+	address: "1234 Any Street"
+}
+
+compareObjects(object1, object2)
 
 
 
