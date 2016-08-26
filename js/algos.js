@@ -50,15 +50,11 @@ console.log();
 // Release 1
 //--------------------------------------------------------------
 
-// In algos.js, write a function that takes two objects and checks to see if the objects share at least one key-value pair. If we called your function with {name: "Steven", age: 54} and {name: "Tamir", age: 54}, the function would return true, because at least one key-value pair matches between the two objects. If no pairs match (and keep in mind that the two objects may not even have any of the same keys), the function should return false. To make your life easier, don't worry about whether a property is a string ('age') or an identifier name (age). Those can be considered equivalent.
-
-// Add some driver code that tests both outcomes of your function.
-
 // Write a function that takes two objects and checks to see if the objects share at least one key-value pair
-// Input: string of key/value pairs
+// Input: objects of key/value pairs
 // Steps: 
-	// Create two different obects with key/value pairs
-		// Assign name and age as the object keys
+	// Create three different obects with key/value pairs
+		// Assign name, age, or pets as the object keys
 		// Write a function that iterates through each of the objects and compares the results with each other
 			//IF each object has the same keys, then return true
 			//ELSE return false
@@ -93,8 +89,13 @@ var object2 = {
 	address: "1234 Any Street"
 }
 
-console.log(compareObjects(object1, object2));
+var object3 = {
+	pets: 3,
+	spouse: true
+}
 
+console.log(compareObjects(object1, object2));
+console.log(compareObjects(object1, object3));
 
 
 
