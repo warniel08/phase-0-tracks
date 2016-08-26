@@ -97,13 +97,32 @@ var object3 = {
 console.log(compareObjects(object1, object2));
 console.log(compareObjects(object1, object3));
 
+//--------------------------------------------------------------
+// Release 2
+//--------------------------------------------------------------
 
+// Write a function that takes an integer for length, and builds and returns an array of strings of the given length. So if we ran your function with an argument of 3, we would get an array of 3 random words back (the words don't have to be actual sensical English words -- "nnnnfph" totally counts). The words should be of randomly varying length, with a minimum of 1 letter and a maximum of 10 letters. (This involves a new trick, generating a random number, that you'll have to look up, but the solution on how to do so is relatively straightforward.)
 
+// Add driver code that does the following 10 times: generates an array, prints the array, feeds the array to your "longest word" function, and prints the result.
 
+// Write a function that takes an integer for length, and builds and returns an array of strings of the given length
+// Input: an integer into the function 
+// Steps:
+	// create function that allows one integer parameter
+	// create array that has the alphabet in it
+	// iterate through the array to randomly pick letters
+	// the words should be of random variance between 1 and 10 letters
+	// add array to longest word function 10 times
+// Output: longest word  function output
 
+var randomNumber = Math.floor(Math.random()*27);
+console.log(randomNumber);
 
+var randomWords = function(num) {
+	//num and adds as many words as num equals to array
+	for (var i = 0; )
 
-
+}
 
 
 
