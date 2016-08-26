@@ -69,11 +69,16 @@ var compareObjects = function(object1, object2) {
 	var compare2 = object2;
 	
 	var compare1Keys = Object.keys(compare1);
-	//console.log(compare2);
+	var compare2Keys = Object.keys(compare2);
 	
-	/*for (var i = 0; i < compare1.length; i++) {
-		console.log(compare1)	
-	}*/
+	for (var i = 0; i < compare1Keys.length; i++) {
+		if (compare1Keys[i] === compare2Keys[i]) {
+			return true;
+		}	
+		else {
+			return false;
+		}
+	}
 }
 
 var object1 = {
@@ -88,7 +93,7 @@ var object2 = {
 	address: "1234 Any Street"
 }
 
-compareObjects(object1, object2)
+console.log(compareObjects(object1, object2));
 
 
 
