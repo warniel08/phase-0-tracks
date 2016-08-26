@@ -5,27 +5,31 @@
 // Input: take words or phrases and put them into an array
 // Steps: 
 	// create empty array
-	// use "some string".length to record the length of the string to use to compare to eachother
-	// sort the lengths in the array from smallest to largest
-		// sort these by comparing the first and second values
-		// IF one or the other value is larger move it to the next index position
-			// then compare the next two values and so on and so forth
-	// once the sorting is done, use a method to take the last value in the array and PRINT it to the screen
-// Output: longest phrase will be printed to the screen
+	// PRINT the array to the screen to show what the words are
+		// use FOR loop to iterate through the array
+		// use array.length to record the length of the array for the iteration to use to compare to eachother
+		// use the index in the array and the length of that word to in an IF statement to know if they are greater than 5 letters
+		// IF the word is greater than 5 letters it gets pushed to a new array
+			// IF the new array is equal to two words and IF the index 0 of the new array is larger than index 1
+				// PRINT "The longest word is + the new array index 0 or 1"
+// Output: longest word will be printed to the screen
 
 var longest = function() {
 
-	var words = ["apple", "gold", "building", "house", "tent", "screen"];
+	var words = ["apple", "gold", "building", "house", "screen", "sanctuary"];
 	var tie_array = [];
 
+	console.log(words)
+
 	for (var i = 0; i < words.length; i++) {
-		if (words[i].length > 5) {
+		if (words[i].length > 6) {
 			tie_array.push(words[i]);
-			if (tie_array.length > 1) {
+			//only works if there are two words greater than 5 letters long
+			if (tie_array.length == 2) { 
 				if (tie_array[0].length > tie_array[1].length) {
-					console.log(tie_array[0]);
+					console.log("The longest word is: " + tie_array[0]);
 				} else {
-					console.log(tie_array[1]);
+					console.log("The longes word is: " + tie_array[1]);
 				}
 			}
 		}
