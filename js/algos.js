@@ -16,6 +16,8 @@
 				// PRINT "The longest word is + the new array index 0 or 1"
 // Output: longest word will be printed to the screen
 
+// *** I spent many hours on this code and I can't think of how to sort the words from largest to smallest without using a built in JS method. This is what I've come up with so far. Same goes for the Release 1 about the key/value pair and the Release 2 random word generator. I'm having a brain block and I've tried several different things, but this is the solution I've come up with that is closest to what is being asked. I wish I could have worked with a partner on this one. I feel like I could have come up with a more robust solution. Discussing stuff with others is so much easier, but I realize that sometimes we just need to do it on our own. :)
+
 var longest = function(array) {
 
 	var words = array;
@@ -26,7 +28,6 @@ var longest = function(array) {
 	for (var i = 0; i < words.length; i++) {
 		if (words[i].length >= 1) {
 			tie_array.push(words[i]);
-			//only works if there are two words greater than or equal to 6 letters long
 			if (tie_array.length === 2) { 
 				if (tie_array[0].length === tie_array[1].length) {
 					console.log("There was a tie between: " + tie_array[0] + " and " + tie_array[1]);
