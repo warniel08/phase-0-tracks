@@ -24,7 +24,7 @@ var longest = function(array) {
 	console.log(words)
 
 	for (var i = 0; i < words.length; i++) {
-		if (words[i].length >= 6) {
+		if (words[i].length >= 1) {
 			tie_array.push(words[i]);
 			//only works if there are two words greater than or equal to 6 letters long
 			if (tie_array.length === 2) { 
@@ -101,7 +101,6 @@ var object3 = {
 // Release 2
 //--------------------------------------------------------------
 
-// Write a function that takes an integer for length, and builds and returns an array of strings of the given length. So if we ran your function with an argument of 3, we would get an array of 3 random words back (the words don't have to be actual sensical English words -- "nnnnfph" totally counts). The words should be of randomly varying length, with a minimum of 1 letter and a maximum of 10 letters. (This involves a new trick, generating a random number, that you'll have to look up, but the solution on how to do so is relatively straightforward.)
 
 // Add driver code that does the following 10 times: generates an array, prints the array, feeds the array to your "longest word" function, and prints the result.
 
@@ -120,9 +119,9 @@ var object3 = {
 var randomWordInsertion = function(num) {
 	var words_array = [];
 	
-	var word = "efmlsmdgkl"; //somehow chop this up into new words of varying length
+	var word = "efmlsmdgkl"; // chop this up into new words of varying length
 	
-	for (var i = 0; i < num; i++){
+	for (var i = 0; i < num; i++) {
 		random_number_end = Math.floor(Math.random()*10)+1;
 		word = word.slice(0, random_number_end);
 		words_array.push(word);
@@ -132,8 +131,12 @@ var randomWordInsertion = function(num) {
 	//console.log(word.slice(0, random_number));
 }
 
-//var words_array = randomWordInsertion(3);
-longest(randomWordInsertion(3));
+for (var i = 0; i < 10; i++) {
+	rand_num = Math.floor(Math.random()*10)+1;
+	//console.log(rand_num);
+	rand_word = randomWordInsertion(rand_num);
+	longest(rand_word);
+}
 
 
 
