@@ -109,20 +109,30 @@ console.log(compareObjects(object1, object3));
 // Input: an integer into the function 
 // Steps:
 	// create function that allows one integer parameter
-	// create array that has the alphabet in it
-	// iterate through the array to randomly pick letters
-	// the words should be of random variance between 1 and 10 letters
+	// create an array with a word that is equal to or longer than 10 letters
+	// iterate through the array to randomly pick words of random variance between 1 and 10 letters
 	// add array to longest word function 10 times
 // Output: longest word  function output
 
 var randomNumber = Math.floor(Math.random()*27);
-console.log(randomNumber);
+//console.log(randomNumber);
 
-var randomWords = function(num) {
-	//num and adds as many words as num equals to array
-	for (var i = 0; )
+var randomWordInsertion = function(num) {
+	var words_array = [];
+	
+	var word = "efmlsmdgkl"; //somehow chop this up into new words of varying length
+	
+	for (var i = 0; i < num; i++){
+		random_number_end = Math.floor(Math.random()*10)+1;
+		word = word.slice(0, random_number_end);
+		words_array.push(word);
+	}
 
+	console.log(words_array);
+	//console.log(word.slice(0, random_number));
 }
+
+randomWordInsertion(3)
 
 
 
