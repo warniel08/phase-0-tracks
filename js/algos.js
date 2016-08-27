@@ -32,7 +32,7 @@ var longest = function(array) {
 					console.log("There was a tie between: " + tie_array[0] + " and " + tie_array[1]);
 				}	else if (tie_array[0].length > tie_array[1].length) {
 					console.log("The longest word is: " + tie_array[0]);
-				} else {
+				} else if (tie_array[0].length < tie_array[1].length) {
 					console.log("The longest word is: " + tie_array[1]);
 				}
 			}
@@ -40,11 +40,11 @@ var longest = function(array) {
 	}
 }
 
-var words_array = ["apple", "gold", "building", "house", "screen", "sanctuary"];
-var another_array = ["tent", "golf", "high", "five", "secret", "garden"];
-longest(words_array);
-longest(another_array);
-console.log();
+// var words_array = ["apple", "gold", "building", "house", "screw", "sanctuary"];
+// var another_array = ["tent", "golf", "high", "five", "secret", "garden"];
+// longest(words_array);
+// longest(another_array);
+// console.log();
 
 //--------------------------------------------------------------
 // Release 1
@@ -94,8 +94,8 @@ var object3 = {
 	spouse: true
 }
 
-console.log(compareObjects(object1, object2));
-console.log(compareObjects(object1, object3));
+// console.log(compareObjects(object1, object2));
+// console.log(compareObjects(object1, object3));
 
 //--------------------------------------------------------------
 // Release 2
@@ -114,7 +114,7 @@ console.log(compareObjects(object1, object3));
 	// add array to longest word function 10 times
 // Output: longest word  function output
 
-var randomNumber = Math.floor(Math.random()*27);
+// var randomNumber = Math.floor(Math.random()*27);
 //console.log(randomNumber);
 
 var randomWordInsertion = function(num) {
@@ -128,26 +128,12 @@ var randomWordInsertion = function(num) {
 		words_array.push(word);
 	}
 
-	console.log(words_array);
+	return words_array;
 	//console.log(word.slice(0, random_number));
 }
 
-randomWordInsertion(3)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+var words_array = randomWordInsertion(3);
+longest(words_array);
 
 
 
