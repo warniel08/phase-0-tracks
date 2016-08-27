@@ -132,8 +132,8 @@ var randomWordInsertion = function(num) {
 	//console.log(word.slice(0, random_number));
 }
 
-var words_array = randomWordInsertion(3);
-longest(words_array);
+//var words_array = randomWordInsertion(3);
+longest(randomWordInsertion(3));
 
 
 
