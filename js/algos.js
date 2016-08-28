@@ -129,7 +129,32 @@ var randomWordInsertion = function(num) {
 	}
 
 	return words_array;
-	//console.log(word.slice(0, random_number));
+
+//-------------------------------------
+// ***This function will create a random word, but I can't get it to run 
+// "num" number of times.
+//-------------------------------------
+
+// 	var randWordGen = function(num) {
+
+// 	var alpha_array = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+// 	var letter_array = [];
+// 	var words_array = [];
+
+// 	var rand_num = Math.floor(Math.random()*10)+1;
+	
+// 	for (var j = 0; j < rand_num; j++){
+// 		var rand_letter = Math.floor(Math.random()*26);
+// 		var new_letter = alpha_array[rand_letter];
+// 		letter_array.push(new_letter);
+// 		var new_word = letter_array.join('');
+// 	}
+
+// 	words_array.push(new_word);	
+	
+// 	console.log(words_array);
+// 	console.log(new_word.length);
+// }
 }
 
 for (var i = 0; i < 10; i++) {
