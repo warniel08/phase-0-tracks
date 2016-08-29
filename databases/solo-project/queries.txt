@@ -38,4 +38,29 @@ sqlite> SELECT * FROM movies;
 3|Aladdin|4|1
 5|Avengers|5|2
 
+The three different types of joins are:
+    The CROSS JOIN
+    The INNER JOIN
+    The OUTER JOIN
+
+Example of CROSS JOIN:
+sqlite> SELECT checked_in, title, rating FROM movies CROSS JOIN status;
+true|Bourne Identity|5
+false|Bourne Identity|5
+true|Gladiator|5
+false|Gladiator|5
+true|Aladdin|4
+false|Aladdin|4
+true|Avengers|5
+false|Avengers|5
+
+INNER JOIN is the default join and you can use INNER or not. Results above!
+
+Example of OUTER JOIN:
+sqlite> SELECT checked_in, title, rating FROM movies LEFT OUTER JOIN status
+   ...>       ON movies.id = status.id;
+true|Bourne Identity|5
+false|Gladiator|5
+|Aladdin|4
+|Avengers|5
 
