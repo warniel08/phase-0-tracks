@@ -1,0 +1,41 @@
+sqlite> SELECT * FROM movies;
+1|Bourne Identity|5|1
+2|Gladiator|5|2
+3|Aladdin|4|1
+4|Point Break|2|2
+5|Avengers|5|2
+
+sqlite> SELECT * FROM status;
+1|true
+2|false
+
+sqlite> UPDATE movies SET status_id=1 WHERE title="Point Break";
+sqlite> SELECT * FROM movies;
+1|Bourne Identity|5|1
+2|Gladiator|5|2
+3|Aladdin|4|1
+4|Point Break|2|1
+5|Avengers|5|2
+
+sqlite> SELECT * FROM movies, status WHERE movies.status_id = status.id;
+1|Bourne Identity|5|1|1|true
+2|Gladiator|5|2|2|false
+3|Aladdin|4|1|1|true
+4|Point Break|2|1|1|true
+5|Avengers|5|2|2|false
+
+sqlite> SELECT movies.title, status.checked_in FROM movies JOIN status ON movies.status_id = status.id;
+Bourne Identity|true
+Gladiator|false
+Aladdin|true
+Point Break|true
+Avengers|false
+
+sqlite> DELETE FROM movies WHERE id=4;
+sqlite> SELECT * FROM movies;
+1|Bourne Identity|5|1
+2|Gladiator|5|2
+3|Aladdin|4|1
+5|Avengers|5|2
+
+
