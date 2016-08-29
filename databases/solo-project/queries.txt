@@ -1,0 +1,66 @@
+sqlite> SELECT * FROM movies;
+1|Bourne Identity|5|1
+2|Gladiator|5|2
+3|Aladdin|4|1
+4|Point Break|2|2
+5|Avengers|5|2
+
+sqlite> SELECT * FROM status;
+1|true
+2|false
+
+sqlite> UPDATE movies SET status_id=1 WHERE title="Point Break";
+sqlite> SELECT * FROM movies;
+1|Bourne Identity|5|1
+2|Gladiator|5|2
+3|Aladdin|4|1
+4|Point Break|2|1
+5|Avengers|5|2
+
+sqlite> SELECT * FROM movies, status WHERE movies.status_id = status.id;
+1|Bourne Identity|5|1|1|true
+2|Gladiator|5|2|2|false
+3|Aladdin|4|1|1|true
+4|Point Break|2|1|1|true
+5|Avengers|5|2|2|false
+
+sqlite> SELECT movies.title, status.checked_in FROM movies JOIN status ON movies.status_id = status.id;
+Bourne Identity|true
+Gladiator|false
+Aladdin|true
+Point Break|true
+Avengers|false
+
+sqlite> DELETE FROM movies WHERE id=4;
+sqlite> SELECT * FROM movies;
+1|Bourne Identity|5|1
+2|Gladiator|5|2
+3|Aladdin|4|1
+5|Avengers|5|2
+
+The three different types of joins are:
+    The CROSS JOIN
+    The INNER JOIN
+    The OUTER JOIN
+
+Example of CROSS JOIN:
+sqlite> SELECT checked_in, title, rating FROM movies CROSS JOIN status;
+true|Bourne Identity|5
+false|Bourne Identity|5
+true|Gladiator|5
+false|Gladiator|5
+true|Aladdin|4
+false|Aladdin|4
+true|Avengers|5
+false|Avengers|5
+
+INNER JOIN is the default join and you can use INNER or not. Results above!
+
+Example of OUTER JOIN:
+sqlite> SELECT checked_in, title, rating FROM movies LEFT OUTER JOIN status
+   ...>       ON movies.id = status.id;
+true|Bourne Identity|5
+false|Gladiator|5
+|Aladdin|4
+|Avengers|5
+
