@@ -57,7 +57,7 @@ end
 
 print "What tool would you like to add to your inventory? "
 tool_user_input = gets.chomp
-print "Where is the tool located (shed/garage)? "
+print "Is the #{tool_user_input} in the garage or the shed? "
 location_picker = gets.chomp
 print "Where in the #{location_picker} is the #{tool_user_input} located? "
 garage_location = gets.chomp
