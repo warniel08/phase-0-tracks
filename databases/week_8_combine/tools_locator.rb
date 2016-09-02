@@ -22,7 +22,7 @@ create_garage_table = <<-SQL
 	CREATE TABLE IF NOT EXISTS Garage(
   Location VARCHAR(255),
   Tool_ID INT,
-  FOREIGN KEY (Tool_ID) REFERENCES tools(ID)
+  FOREIGN KEY (Tool_ID) REFERENCES Tools(ID)
  );
 SQL
 
@@ -30,7 +30,7 @@ create_shed_table = <<-SQL
 	CREATE TABLE IF NOT EXISTS Shed(
   Location VARCHAR(255),
   Tool_ID INT,
-  FOREIGN KEY (Tool_ID) REFERENCES tools(ID)
+  FOREIGN KEY (Tool_ID) REFERENCES Tools(ID)
  );
 SQL
 
@@ -59,13 +59,20 @@ print "What tool would you like to add to your inventory? "
 tool_user_input = gets.chomp
 print "Where is the tool located (shed/garage)? "
 location_picker = gets.chomp
-if location_picker == "garage"
-	location_garage_input = gets.chomp
-elsif location_picker == "shed"
-	
+print "Where in the #{location_picker} is the #{tool_user_input} located? "
+garage_location = gets.chomp
+
+
+# if location_picker == "garage"
+# 	location_garage_input = gets.chomp
+# elsif location_picker == "shed"
+# 	location_shed_input = gets.chomp
+# else
+# 	puts "Please try again. Please enter the location 'shed' or 'garage'"
+# end
 
 create_tool(tools_db, tool_user_input)
-create_garage_location(tools_db, location_garage_input)
+create_garage_location(tools_db, garage_location)
 
 
 
