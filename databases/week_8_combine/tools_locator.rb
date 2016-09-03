@@ -51,7 +51,7 @@ def create_garage_location(tools_db, location, tool_id)
 end
 
 
-#create_tool(tools_db, "hammer")
+create_tool(tools_db, "shovel")
 tool = tools_db.execute("SELECT * FROM Tools")
 
 tool_ary = []
@@ -61,6 +61,19 @@ tool.each do |tool|
 	tool_ary
 end
 p tool_ary
+
+create_garage_location(tools_db, "west wall", tool_ary[1])
+gar_location = tools_db.execute("SELECT * FROM Garage")
+
+tool_loc_ary = []
+
+gar_location.each do |location|
+	tool_loc_ary << "#{location["Location"]}"
+	tool_loc_ary
+end
+
+p tool_loc_ary
+
 
 
 
