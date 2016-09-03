@@ -1,3 +1,15 @@
+# there will be two tables, the 'tools' table and the 'location' table
+
+# create ‘tools’ table, when i ask the user for the tool name the program will store it in a db with the id of the tool (1, 2, 3, 4, etc) and the name of the tool (hammer, saw, broom, screws)
+
+# the tools table will also contain the location_id as a reference to where the tool will be located
+
+# the second table will be the ‘location’ table which will have the id of the location (1, 2, 3, 4, etc) and the name of the location inside the shed (workbench, wb_drawers, wb_shelves, wire_shelves, attic)
+
+# the two tables will be linked by a foreign key in the tools table referencing the primary key of the location table
+
+
+
 require 'sqlite3'
 
 #----------------------------------------------
@@ -14,55 +26,47 @@ tools_db.results_as_hash = true
 create_tools_table = <<-SQL
  CREATE TABLE IF NOT EXISTS Tools(
  	ID INTEGER PRIMARY KEY,
-  Name VARCHAR(255)
+  Name VARCHAR(255),
+  Location_ID INTEGER,
+  FOREIGN KEY (Location_ID) REFERENCES Location(ID)
  );
 SQL
 
-# create_garage_table = <<-SQL
-# 	CREATE TABLE IF NOT EXISTS Garage(
-#   Location VARCHAR(255),
-#   Tool_ID INT,
-#   FOREIGN KEY (Tool_ID) REFERENCES Tools(ID)
-#  );
-# SQL
-
-create_shed_table = <<-SQL
-	CREATE TABLE IF NOT EXISTS Shed(
-  Location VARCHAR(255),
-  Tool_ID INT,
-  FOREIGN KEY (Tool_ID) REFERENCES Tools(ID)
+create_location_table = <<-SQL
+	CREATE TABLE IF NOT EXISTS Location(
+		ID INTEGER PRIMARY KEY,
+  Name VARCHAR(255),
  );
 SQL
 
 tools_db.execute(create_tools_table)
-#tools_db.execute(create_garage_table)
-tools_db.execute(create_shed_table)
+tools_db.execute(create_location_table)
 
 #----------------------------------------------
 # Methods
 #----------------------------------------------
 
-def create_tool(tools_db, name)
-	tools_db.execute("INSERT INTO Tools (Name) VALUES (?)", [name])
-end
+# def create_tool(tools_db, name)
+# 	tools_db.execute("INSERT INTO Tools (Name) VALUES (?)", [name])
+# end
 
-def create_shed_location(tools_db, location, tool_id)
-	tools_db.execute("INSERT INTO Shed (Location, Tool_ID) VALUES (?, ?)", [location, tool_id])
-end
+# def create_shed_location(tools_db, location, tool_id)
+# 	tools_db.execute("INSERT INTO Shed (Location, Tool_ID) VALUES (?, ?)", [location, tool_id])
+# end
 
 
-create_tool(tools_db, "shovel")
-tool = tools_db.execute("SELECT * FROM Tools")
+# create_tool(tools_db, "shovel")
+# tool = tools_db.execute("SELECT * FROM Tools")
 
-tool_ary = []
+# tool_ary = []
 
-tool.each do |tool|
-	tool_ary << "#{tool["ID"]}"
-end
+# tool.each do |tool|
+# 	tool_ary << "#{tool["ID"]}"
+# end
 
-tool_ary.each do |tool_index|
-	create_shed_location(tools_db, "west wall", tool_index)
-end
+# tool_ary.each do |tool_index|
+# 	create_shed_location(tools_db, "west wall", tool_index)
+# end
 
 # tool_ary.each do |index|
 # 	tool_num = tool_ary.split
