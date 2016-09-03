@@ -18,13 +18,13 @@ create_tools_table = <<-SQL
  );
 SQL
 
-create_garage_table = <<-SQL
-	CREATE TABLE IF NOT EXISTS Garage(
-  Location VARCHAR(255),
-  Tool_ID INT,
-  FOREIGN KEY (Tool_ID) REFERENCES Tools(ID)
- );
-SQL
+# create_garage_table = <<-SQL
+# 	CREATE TABLE IF NOT EXISTS Garage(
+#   Location VARCHAR(255),
+#   Tool_ID INT,
+#   FOREIGN KEY (Tool_ID) REFERENCES Tools(ID)
+#  );
+# SQL
 
 create_shed_table = <<-SQL
 	CREATE TABLE IF NOT EXISTS Shed(
@@ -35,7 +35,7 @@ create_shed_table = <<-SQL
 SQL
 
 tools_db.execute(create_tools_table)
-tools_db.execute(create_garage_table)
+#tools_db.execute(create_garage_table)
 tools_db.execute(create_shed_table)
 
 #----------------------------------------------
@@ -46,8 +46,8 @@ def create_tool(tools_db, name)
 	tools_db.execute("INSERT INTO Tools (Name) VALUES (?)", [name])
 end
 
-def create_garage_location(tools_db, location, tool_id)
-	tools_db.execute("INSERT INTO Garage (Location, Tool_ID) VALUES (?, ?)", [location, tool_id])
+def create_shed_location(tools_db, location, tool_id)
+	tools_db.execute("INSERT INTO Shed (Location, Tool_ID) VALUES (?, ?)", [location, tool_id])
 end
 
 
@@ -58,22 +58,21 @@ tool_ary = []
 
 tool.each do |tool|
 	tool_ary << "#{tool["ID"]}"
-	tool_ary
-end
-p tool_ary
-
-create_garage_location(tools_db, "west wall", tool_ary[1])
-gar_location = tools_db.execute("SELECT * FROM Garage")
-
-tool_loc_ary = []
-
-gar_location.each do |location|
-	tool_loc_ary << "#{location["Location"]}"
-	tool_loc_ary
 end
 
-p tool_loc_ary
+tool_ary.each do |tool_index|
+	create_shed_location(tools_db, "west wall", tool_index)
+end
 
+# tool_ary.each do |index|
+# 	tool_num = tool_ary.split
+# end
+
+# p tool_num
+
+#create_shed_location(tools_db, "west wall", tool_num)
+
+#shed_location = tools_db.execute("SELECT * FROM Shed")
 
 
 
