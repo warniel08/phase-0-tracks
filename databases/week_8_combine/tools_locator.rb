@@ -46,6 +46,37 @@ tools_db.execute(create_location_table)
 # Methods
 #----------------------------------------------
 
+def create_tool(tools_db, name, location_id)
+	tools_db.execute("INSERT INTO Tools (Name, Location_ID) VALUES (?, ?)", [name, location_id])
+end
+
+def create_location(tools_db, loc_name)
+	tools_db.execute("INSERT INTO Location (Name) VALUES (?)", [name])
+end
+
+#----------------------------------------------
+# Driver code to ask user for information
+#----------------------------------------------
+
+# create_tool(tools_db, "shovel")
+# tool = tools_db.execute("SELECT * FROM Tools")
+
+# tool_ary = []
+
+# tool.each do |tool|
+# 	tool_ary << "#{tool["ID"]}"
+# end
+
+
+
+
+
+
+
+
+
+
+
 # def create_tool(tools_db, name)
 # 	tools_db.execute("INSERT INTO Tools (Name) VALUES (?)", [name])
 # end
