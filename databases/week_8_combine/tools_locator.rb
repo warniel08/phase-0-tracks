@@ -35,7 +35,8 @@ SQL
 create_location_table = <<-SQL
 	CREATE TABLE IF NOT EXISTS Location(
 		ID INTEGER PRIMARY KEY,
-  Name VARCHAR(255)
+  Name VARCHAR(255),
+  UNIQUE (Name)
  );
 SQL
 
@@ -51,7 +52,7 @@ def create_tool(tools_db, name, location_id)
 end
 
 def create_location(tools_db, loc_name)
-	tools_db.execute("INSERT INTO Location (Name) VALUES (?)", [Name])
+	tools_db.execute("INSERT OR IGNORE INTO Location (Name) VALUES (?)", [loc_name])
 end
 
 #----------------------------------------------
@@ -135,16 +136,6 @@ end
 
 p user_choice_ary
 p tool_ary
-# create_tool(tools_db, "shovel")
-# tool = tools_db.execute("SELECT * FROM Tools")
-
-# tool_ary = []
-
-# tool.each do |tool|
-# 	tool_ary << "#{tool["ID"]}"
-# end
-
-# create_shed_location(tools_db, "west wall", tool_num)
 
 
 
