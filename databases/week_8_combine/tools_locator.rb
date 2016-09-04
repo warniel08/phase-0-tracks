@@ -35,7 +35,7 @@ SQL
 create_location_table = <<-SQL
 	CREATE TABLE IF NOT EXISTS Location(
 		ID INTEGER PRIMARY KEY,
-  Name VARCHAR(255),
+  Name VARCHAR(255)
  );
 SQL
 
@@ -51,13 +51,90 @@ def create_tool(tools_db, name, location_id)
 end
 
 def create_location(tools_db, loc_name)
-	tools_db.execute("INSERT INTO Location (Name) VALUES (?)", [name])
+	tools_db.execute("INSERT INTO Location (Name) VALUES (?)", [Name])
 end
 
 #----------------------------------------------
 # Driver code to ask user for information
 #----------------------------------------------
 
+user_choice_ary = []
+tool_ary = []
+location_ary = ["The Workbench Counter", "The Left WB Drawers", "The Right WB Drawers", "The WB Shelves", "The Wire Shelves", "The Attic"]
+
+location_ary.each do |location|
+	create_location(tools_db, location)
+end
+
+puts "\n---Welcome to the Tools/Things Storage Program---"
+puts "\nThere are several different locations within \nthe shed that the tools/things will be stored in."
+
+loop do 
+
+	puts "\nChoose a location: "
+	puts "---1--- The Workbench Counter"
+	puts "---2--- The Left WB Drawers"
+	puts "---3--- The Right WB Drawers"
+	puts "---4--- The WB Shelves"
+	puts "---5--- The Wire Shelves"
+	puts "---6--- The Attic"
+	puts "\nType 'done' when you are finished adding tools/things"
+	print "Enter choice: "
+
+	user_choice = gets.chomp
+	
+	if user_choice == "done"
+		break
+	elsif user_choice == "1"
+		user_choice_ary << user_choice
+		print "Please enter the tool/thing you would like to add? "
+		user_tool = gets.chomp
+		tool_ary << user_tool
+		puts "\nYou entered: \nLocation: #{user_choice} \nItem: #{user_tool}"
+		sleep 2
+	elsif user_choice == "2"
+		user_choice_ary << user_choice
+		print "Please enter the tool/thing you would like to add? "
+		user_tool = gets.chomp
+		tool_ary << user_tool
+		puts "\nYou entered: \nLocation: #{user_choice} \nItem: #{user_tool}"
+		sleep 2
+	elsif user_choice == "3"
+		user_choice_ary << user_choice
+		print "Please enter the tool/thing you would like to add? "
+		user_tool = gets.chomp
+		tool_ary << user_tool
+		puts "\nYou entered: \nLocation: #{user_choice} \nItem: #{user_tool}"
+		sleep 2
+	elsif user_choice == "4"
+		user_choice_ary << user_choice
+		print "Please enter the tool/thing you would like to add? "
+		user_tool = gets.chomp
+		tool_ary << user_tool
+		puts "\nYou entered: \nLocation: #{user_choice} \nItem: #{user_tool}"
+		sleep 2
+	elsif user_choice == "5"
+		user_choice_ary << user_choice
+		print "Please enter the tool/thing you would like to add? "
+		user_tool = gets.chomp
+		tool_ary << user_tool
+		puts "\nYou entered: \nLocation: #{user_choice} \nItem: #{user_tool}"
+		sleep 2
+	elsif user_choice == "6"
+		user_choice_ary << user_choice
+		print "Please enter the tool/thing you would like to add? "
+		user_tool = gets.chomp
+		tool_ary << user_tool
+		puts "\nYou entered: \nLocation: #{user_choice} \nItem: #{user_tool}"
+		sleep 2
+	else
+		puts "\n***Please enter a valid option***"
+	end
+
+end
+
+p user_choice_ary
+p tool_ary
 # create_tool(tools_db, "shovel")
 # tool = tools_db.execute("SELECT * FROM Tools")
 
@@ -67,7 +144,7 @@ end
 # 	tool_ary << "#{tool["ID"]}"
 # end
 
-
+# create_shed_location(tools_db, "west wall", tool_num)
 
 
 
