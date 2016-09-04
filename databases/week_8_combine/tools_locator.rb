@@ -134,92 +134,14 @@ loop do
 
 end
 
-p user_choice_ary
-p tool_ary
+tool_ary
+user_choice_ary
+user_choice_int_ary = user_choice_ary.map(&:to_i)
 
+tool_location = Hash[tool_ary.zip user_choice_int_ary]
 
-
-
-
-
-
-
-
-# def create_tool(tools_db, name)
-# 	tools_db.execute("INSERT INTO Tools (Name) VALUES (?)", [name])
-# end
-
-# def create_shed_location(tools_db, location, tool_id)
-# 	tools_db.execute("INSERT INTO Shed (Location, Tool_ID) VALUES (?, ?)", [location, tool_id])
-# end
-
-
-# create_tool(tools_db, "shovel")
-# tool = tools_db.execute("SELECT * FROM Tools")
-
-# tool_ary = []
-
-# tool.each do |tool|
-# 	tool_ary << "#{tool["ID"]}"
-# end
-
-# tool_ary.each do |tool_index|
-# 	create_shed_location(tools_db, "west wall", tool_index)
-# end
-
-# tool_ary.each do |index|
-# 	tool_num = tool_ary.split
-# end
-
-# p tool_num
-
-#create_shed_location(tools_db, "west wall", tool_num)
-
-#shed_location = tools_db.execute("SELECT * FROM Shed")
-
-
-
-#----------------------------------------------
-# Driver code to ask user for information
-#----------------------------------------------
-
-# print "What tool would you like to add to your inventory? "
-# tool_user_input = gets.chomp
-# print "Is the #{tool_user_input} in the garage or the shed? "
-# location_picker = gets.chomp
-# print "Where in the #{location_picker} is the #{tool_user_input} located? "
-# garage_location = gets.chomp
-
-# # if location_picker == "garage"
-# # 	location_garage_input = gets.chomp
-# # elsif location_picker == "shed"
-# # 	location_shed_input = gets.chomp
-# # else
-# # 	puts "Please try again. Please enter the location 'shed' or 'garage'"
-# # end
-
-# create_tool(tools_db, tool_user_input)
-
-# tool = tools_db.execute("SELECT * FROM Tools")
-# gar_location = tools_db.execute("SELECT * FROM Garage")
-
-# tool_ary = []
-# tool_loc_ary = []
-
-# tool.each do |tool|
-# 	tool_ary << "#{tool["ID"]}"
-# 	tool_ary
-# end
-
-# create_garage_location(tools_db, garage_location, tool_ary)
-
-# gar_location.each do |location|
-# 	tool_loc_ary << "#{location["Location"]}"
-# 	p tool_loc_ary
-# end
-
-
-
-
+tool_location.each do |name, index|
+	create_tool(tools_db, name, index)
+end
 
 
