@@ -79,7 +79,8 @@ loop do
 	puts "---4--- The WB Shelves"
 	puts "---5--- The Wire Shelves"
 	puts "---6--- The Attic"
-	puts "\nType 'done' when you are finished adding tools/things"
+	puts "\nType 'print' to see what you have entered so far"
+	puts "Type 'done' when you are finished adding tools/things"
 	print "Enter choice: "
 
 	user_choice = gets.chomp
@@ -128,6 +129,8 @@ loop do
 		tool_ary << user_tool
 		puts "\nYou entered: \nLocation: #{user_choice} \nItem: #{user_tool}"
 		sleep 2
+	elsif user_choice == "print"
+		puts "So far you have entered locations of #{user_choice_ary} \nand tools of  #{tool_ary}"
 	else
 		puts "\n***Please enter a valid option***"
 	end
