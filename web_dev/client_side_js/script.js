@@ -8,7 +8,7 @@ image.style.border = "2px solid red";
 
 
 function undoBorderStyle(event) {
-	event.target.style.border = null;
+	event.target.style.border = "";
 }
 
 image.addEventListener("click", undoBorderStyle)
