@@ -1,0 +1,8 @@
+What are some of the key design philosophies of the Linux operating system?
+    One main philosophy of Linux is that it is free and open source. There are some commercial Linux distros but they mainly offer user support and help. They were still built off of the open-source Linux platform. The Linux philosophy also assumes that the user has some computer experience and is computer literate. 
+
+In your own words, what is a VPS (virtual private server)? What, according to your research, are the advantages of using a VPS?
+    A VPS is a server that you have access to and that you can modify to your liking. They are generally not very powerful and can't handle tons of internet traffic, but it's a good way to test and see what it is like to have your own private server. The virtual part of it means that you don't need a separate physical computer. You can run it off your own computer using virtual machine software or on the internet as shown in the video. Virtual machines can be destroyed and recreated as many times as you want. It's a good way to test other operating systems without worrying about destroying your system. If you mess up on it or delete a file that destroys your OS then just make a new VM.
+
+Optional bonus question: Why is it considered a bad idea to run programs as the root user on a Linux system?
+    The root user has access to all files in the filesystem hierarchy. If you accidentally deleted a file it could have negative ramifications if it were the wrong file. Also, there are other security issues associated with having root access. You could open ports that aren't supposed to be opened or you could give others access to files that they shouldn't have access to.
