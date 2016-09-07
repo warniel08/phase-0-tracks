@@ -45,6 +45,36 @@ get '/students/:id' do
   student.to_s
 end
 
+#------------------------------------------
+# My Routes
+#------------------------------------------ 
+
 get '/contact' do
   "1234 Any Street<br>Anytown, AK 01234"
 end
+
+get '/great_job' do
+  name = params[:name]
+  if name
+    "Good job, #{name}!"
+  else
+    "Good job!"
+  end
+end
+
+get '/:number_one' do
+  number_one = params[:number_one]
+  p number_one
+  #number_two = params[:number_two]
+  "#{number_one} + "
+end
+
+
+
+
+
+
+
+
+
+
