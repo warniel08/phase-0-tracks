@@ -1,0 +1,22 @@
+p {
+	height: 200px;
+	width: 200px;
+	border-radius: 5px;
+	display: inline-block;
+}
+
+#green {
+	background-color: green;
+}
+
+#orange {
+	background-color: orange;	
+}
+
+#red {
+	background-color: red;
+}
+
+#blue {
+	background-color: blue;
+}
