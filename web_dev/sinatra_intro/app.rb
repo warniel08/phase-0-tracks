@@ -62,11 +62,11 @@ get '/great_job' do
   end
 end
 
-get '/:number_one' do
-  number_one = params[:number_one]
-  p number_one
-  #number_two = params[:number_two]
-  "#{number_one} + "
+get '/:number_one/:number_two' do
+  first_num = params[:number_one]
+  second_num = params[:number_two]
+  total_num = first_num.to_i + second_num.to_i
+  "#{first_num} + #{second_num} = #{total_num}" 
 end
 
 
