@@ -69,7 +69,21 @@ get '/:number_one/:number_two' do
   "#{first_num} + #{second_num} = #{total_num}" 
 end
 
+# Make a route that allows the user to search the database in some way -- maybe for students who have a certain first name, or some other attribute. If you like, you can simply modify the home page to take a query parameter, and filter the students displayed if a query parameter is present.
 
+#------------------------------------------
+# Release 1: Research
+#------------------------------------------
+
+# 1. Is Sinatra the only web app library in Ruby? What are some others?
+  # No Sinatra is not the only web app library. There are a bunch of others: Ruby on Rails, Rack 'n' Alternatives, Hobo, Padrino, Volt, etc.
+
+
+# 2. Are SQLite and the sqlite3 gem your only options for using a database with Sinatra? What are some others?
+  # No, some others include Cubrid, PostgreSQL, etc.
+
+# 3. What is meant by the term web stack?
+  # Web stack is the software used for web development. One popular stack is the LAMP stack which consists of an OS (Linux), a web server (Apache), database software (MySQL), and a programming language (PHP). It's the stack of software used to create and host a website. 
 
 
 
